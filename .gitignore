@@ -5,3 +5,4 @@ old
 venv
 .idea
 kaggle
+*_prep.csv
