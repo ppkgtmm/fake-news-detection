@@ -6,3 +6,4 @@ venv
 .idea
 kaggle
 *_prep.csv
+.ipynb_checkpoints
