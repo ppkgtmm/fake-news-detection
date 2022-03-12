@@ -1,0 +1,5 @@
+dataset:
+    input_paths: []
+    output_paths: []
+variables:
+    text_vars: ["title", "text"]
