@@ -1,5 +1,6 @@
 antlr4-python3-runtime==4.8
 click==8.0.4
+Hydra==2.5
 hydra-core==1.1.1
 importlib-resources==5.4.0
 joblib==1.1.0
