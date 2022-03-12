@@ -31,3 +31,7 @@ def run_preprocessing(config):
         full_out_path = os.path.join(current_path, out_path)
 
         preprocess(full_in_path, full_out_path, config)
+
+
+if __name__ == "__main__":
+    run_preprocessing()
