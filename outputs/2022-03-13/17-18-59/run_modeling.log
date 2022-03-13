@@ -1,0 +1,2 @@
+[2022-03-13 17:20:15,521][modeling.main][INFO] - Logistic regression test AUC score : 0.9928696285147145
+[2022-03-13 17:20:36,968][modeling.main][INFO] - Multinomial NB test AUC score : 0.9583332752002498
