@@ -1,0 +1,18 @@
+[2022-03-13 16:25:36,386][__main__][INFO] - Config param validation successful
+[2022-03-13 16:25:36,386][__main__][INFO] - Begin visualization process
+[2022-03-13 16:25:36,862][visualization.main][INFO] - Read data from /Users/apple/Desktop/sentiment-analysis/data/True_prep.csv successful
+[2022-03-13 16:25:45,168][visualization.main][INFO] - Visualization of title text field successful
+[2022-03-13 16:26:26,266][visualization.main][INFO] - Visualization of text text field successful
+[2022-03-13 16:26:26,267][visualization.main][INFO] - Done text fields visualization of /Users/apple/Desktop/sentiment-analysis/data/True_prep.csv
+[2022-03-13 16:26:26,542][visualization.main][INFO] - Visualization of subject distribution successful
+[2022-03-13 16:26:26,542][visualization.main][INFO] - Done categorical fields visualization of /Users/apple/Desktop/sentiment-analysis/data/True_prep.csv
+[2022-03-13 16:26:26,542][__main__][INFO] - Visualization of /Users/apple/Desktop/sentiment-analysis/data/True_prep.csv was successful
+[2022-03-13 16:26:27,075][visualization.main][INFO] - Read data from /Users/apple/Desktop/sentiment-analysis/data/Fake_prep.csv successful
+[2022-03-13 16:26:34,507][visualization.main][INFO] - Visualization of title text field successful
+[2022-03-13 16:27:21,991][visualization.main][INFO] - Visualization of text text field successful
+[2022-03-13 16:27:21,991][visualization.main][INFO] - Done text fields visualization of /Users/apple/Desktop/sentiment-analysis/data/Fake_prep.csv
+[2022-03-13 16:27:22,301][visualization.main][INFO] - Visualization of subject distribution successful
+[2022-03-13 16:27:22,301][visualization.main][INFO] - Done categorical fields visualization of /Users/apple/Desktop/sentiment-analysis/data/Fake_prep.csv
+[2022-03-13 16:27:22,301][__main__][INFO] - Visualization of /Users/apple/Desktop/sentiment-analysis/data/Fake_prep.csv was successful
+[2022-03-13 16:27:22,522][visualization.main][INFO] - Visualization of label distribution successful
+[2022-03-13 16:27:22,524][__main__][INFO] - End visualization process
