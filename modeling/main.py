@@ -2,9 +2,7 @@ import os
 import logging
 from hydra.utils import get_original_cwd
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import lit, split, array
-
-# from pyspark.sql.types import ArrayType, StringType
+from pyspark.sql.functions import lit, split
 from pyspark.ml.feature import CountVectorizer, VectorAssembler
 from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
@@ -13,15 +11,6 @@ from pyspark.ml import Pipeline
 # from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
 
 log = logging.getLogger(__name__)
-
-
-# def explode_text(text):
-#     if text is None:
-#         return [""]
-#     return text.split()
-#
-#
-# explode_udf = udf(explode_text, ArrayType(StringType()))
 
 
 def create_spark_session():
@@ -40,7 +29,7 @@ def read_prepare_data(session, config):
         df = (
             session.read.csv(full_in_path, header=header, inferSchema=True)
             .withColumn(target_var, lit(target_val))
-            .fillna("", subset=config.variables.text_vars)
+            .fillna("")
         )
         dfs.append(df)
 
@@ -62,7 +51,7 @@ def run_explode_text(dataset, text_features):
 
     for text_feature in text_features:
         new_column = "exploded_{}".format(text_feature)
-        acc = acc.withColumn(new_column, split(acc[text_feature], " ")).fillna([""])
+        acc = acc.withColumn(new_column, split(acc[text_feature], " "))
         result_column.append(new_column)
 
     return acc, result_column
