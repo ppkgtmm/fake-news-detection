@@ -2,7 +2,7 @@ import os
 import logging
 from hydra.utils import get_original_cwd
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import lit, udf
+from pyspark.sql.functions import lit, udf, split
 from pyspark.sql.types import ArrayType, StringType
 from pyspark.ml.feature import CountVectorizer, VectorAssembler
 from pyspark.ml.classification import LogisticRegression
@@ -14,13 +14,13 @@ from pyspark.ml import Pipeline
 log = logging.getLogger(__name__)
 
 
-def explode_text(text):
-    if text is None:
-        return [""]
-    return text.split()
-
-
-explode_udf = udf(explode_text, ArrayType(StringType()))
+# def explode_text(text):
+#     if text is None:
+#         return [""]
+#     return text.split()
+#
+#
+# explode_udf = udf(explode_text, ArrayType(StringType()))
 
 
 def create_spark_session():
@@ -59,7 +59,7 @@ def run_explode_text(dataset, text_features):
 
     for text_feature in text_features:
         new_column = "exploded_{}".format(text_feature)
-        acc = acc.withColumn(new_column, explode_udf(acc[text_feature]))
+        acc = acc.withColumn(new_column, split(acc[text_feature], " "))
         result_column.append(new_column)
 
     return acc, result_column
