@@ -35,7 +35,7 @@ def read_prepare_data(session, config):
     for idx, in_path in enumerate(config.dataset.input_paths):
         full_in_path = os.path.join(current_path, in_path)
         header = config.dataset.headers[idx]
-        target_val = config.variables.target_vals
+        target_val = config.variables.target_vals[idx]
         df = session.read.csv(full_in_path, header=header, inferSchema=True).withColumn(
             target_var, lit(target_val)
         )
