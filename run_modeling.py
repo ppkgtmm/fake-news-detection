@@ -1,10 +1,10 @@
 import hydra
-from modeling import build_model
+from modeling import do_modeling
 
 
 @hydra.main(config_path="config", config_name="modeling.yaml")
 def run_modeling(config):
-    build_model(config)
+    do_modeling(config)
 
 
 if __name__ == "__main__":

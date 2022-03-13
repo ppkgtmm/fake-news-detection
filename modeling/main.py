@@ -2,19 +2,16 @@ import os
 import logging
 from hydra.utils import get_original_cwd
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import lit, split
-from pyspark.ml.feature import CountVectorizer, VectorAssembler
-from pyspark.ml.classification import LogisticRegression
-from pyspark.ml.evaluation import BinaryClassificationEvaluator
-from pyspark.ml import Pipeline
+from pyspark.sql.functions import lit
+from pyspark.ml.classification import LogisticRegression, NaiveBayes
+from modeling import get_pipeline, evaluate, combine_data, explode_text
 
-# from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
 
 log = logging.getLogger(__name__)
 
 
-def create_spark_session():
-    return SparkSession.builder.appName("app").getOrCreate()
+def create_spark_session(config):
+    return SparkSession.builder.appName(config.spark.app_name).getOrCreate()
 
 
 def read_prepare_data(session, config):
@@ -36,67 +33,35 @@ def read_prepare_data(session, config):
     return dfs
 
 
-def combine_data(data):
-    assert len(data) > 1
-    acc = data[0]
-    for item in data[1:]:
-        acc = acc.union(item)
-    return acc
-
-
-def run_explode_text(dataset, text_features):
-
-    acc = dataset
-    result_column = []
-
-    for text_feature in text_features:
-        new_column = "exploded_{}".format(text_feature)
-        acc = acc.withColumn(new_column, split(acc[text_feature], " "))
-        result_column.append(new_column)
-
-    return acc, result_column
-
-
-def get_count_vectorizer(text_features):
-
-    vectorizers = []
-    result_column = []
-
-    for text_feature in text_features:
-        output_col = "vectorized_{}".format(text_feature)
-        result_column.append(output_col)
-        count_vectorizer = CountVectorizer(inputCol=text_feature, outputCol=output_col)
-        vectorizers.append(count_vectorizer)
-
-    return vectorizers, result_column
-
-
-def build_model(config):
+def do_modeling(config):
 
     features = config.variables.feature_var
     target = config.variables.target_var
 
-    spark = create_spark_session()
+    spark = create_spark_session(config)
 
     dfs = read_prepare_data(spark, config)
     combined = combine_data(dfs)
 
     train_set, test_set = combined.randomSplit([0.85, 0.15], seed=config.splitting.seed)
 
-    train, text_col_name = run_explode_text(train_set, config.variables.text_vars)
-    test, _ = run_explode_text(test_set, config.variables.text_vars)
+    train, text_col_name = explode_text(train_set, config.variables.text_vars)
+    test, _ = explode_text(test_set, config.variables.text_vars)
 
-    count_vectorizers, vector_names = get_count_vectorizer(text_col_name)
-    assembler = VectorAssembler(inputCols=vector_names, outputCol=features)
+    lr = LogisticRegression(labelCol=target, featuresCol=features, maxIter=10)
+    lr_pipeline = get_pipeline(text_col_name, lr, features)
 
-    lr = LogisticRegression(labelCol=target, featuresCol="features", maxIter=10)
-
-    pipeline = Pipeline(stages=count_vectorizers + [assembler, lr])
-
-    model = pipeline.fit(train)
-    test_pred = model.transform(test)
-    evaluator = BinaryClassificationEvaluator(
-        labelCol=target, rawPredictionCol="prediction", metricName="areaUnderROC"
+    model_lr = lr_pipeline.fit(train)
+    log.info(
+        "Logistic regression test AUC score : {}".format(
+            evaluate(model_lr, test, target)
+        )
     )
 
-    log.info("Test AUC score : {}".format(evaluator.evaluate(test_pred)))
+    nb = NaiveBayes(labelCol=target, featuresCol=features)
+    nb_pipeline = get_pipeline(text_col_name, nb, features)
+
+    model_nb = nb_pipeline.fit(train)
+    log.info(
+        "Multinomial NB test AUC score : {}".format(evaluate(model_nb, test, target))
+    )
