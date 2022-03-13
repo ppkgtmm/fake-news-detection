@@ -2,8 +2,9 @@ import os
 import logging
 from hydra.utils import get_original_cwd
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import lit, udf, split
-from pyspark.sql.types import ArrayType, StringType
+from pyspark.sql.functions import lit, split, array
+
+# from pyspark.sql.types import ArrayType, StringType
 from pyspark.ml.feature import CountVectorizer, VectorAssembler
 from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
@@ -36,8 +37,10 @@ def read_prepare_data(session, config):
         full_in_path = os.path.join(current_path, in_path)
         header = config.dataset.headers[idx]
         target_val = config.variables.target_vals[idx]
-        df = session.read.csv(full_in_path, header=header, inferSchema=True).withColumn(
-            target_var, lit(target_val)
+        df = (
+            session.read.csv(full_in_path, header=header, inferSchema=True)
+            .withColumn(target_var, lit(target_val))
+            .fillna("", subset=config.variables.text_vars)
         )
         dfs.append(df)
 
@@ -59,7 +62,7 @@ def run_explode_text(dataset, text_features):
 
     for text_feature in text_features:
         new_column = "exploded_{}".format(text_feature)
-        acc = acc.withColumn(new_column, split(acc[text_feature], " "))
+        acc = acc.withColumn(new_column, split(acc[text_feature], " ")).fillna([""])
         result_column.append(new_column)
 
     return acc, result_column
