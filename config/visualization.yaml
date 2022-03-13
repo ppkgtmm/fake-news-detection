@@ -1,0 +1,12 @@
+dataset:
+    input_paths: ["data/True_prep.csv", "data/Fake_prep.csv"]
+visualizations:
+    output_dir: "visualization/outputs"
+    hist_bins: 30
+variables:
+    target_var: "label"
+    target_vals: ["real", "fake" ]
+    text_vars: ["title", "text"]
+    cat_vars: ["subject"]
+style:
+    target_colors: ["steelblue", "tomato"]
