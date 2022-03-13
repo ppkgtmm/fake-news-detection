@@ -4,7 +4,7 @@ from hydra.utils import get_original_cwd
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import lit
 from pyspark.ml.classification import LogisticRegression, NaiveBayes
-from modeling import get_pipeline, evaluate, combine_data, explode_text
+from modeling.utils import get_pipeline, evaluate, combine_data, explode_text
 
 
 log = logging.getLogger(__name__)
