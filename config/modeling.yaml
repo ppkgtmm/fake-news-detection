@@ -1,6 +1,6 @@
 dataset:
-     input_paths: ["data/True_prep.csv", "data/Fake_prep.csv"]
-     headers: [True, True]
+    input_paths: ["data/True_prep.csv", "data/Fake_prep.csv"]
+    headers: [True, True]
 variables:
     target_var: "label"
     feature_var: "features"
@@ -10,5 +10,11 @@ spark:
     app_name: "modeling"
 splitting:
     seed: 42
+    train_split: 0.85
 modeling:
     output_dir: "modeling/outputs"
+tuning:
+    count_vectorizer:
+        min_df: { "text": [1,2,3] }
+    lr:
+        reg_param: [0.01, 0.1, 0, 1]
