@@ -14,15 +14,20 @@ from modeling.utils import (
     get_count_vectorizer,
     get_feature_name,
 )
+from hydra.utils import get_original_cwd
 
 log = logging.getLogger(__name__)
 
 
-def do_tuning(config, out_folder):
+def do_tuning(config):
     features = config.variables.feature_var
     target = config.variables.target_var
-    tune_summary_path = os.path.join(out_folder, "lr_tuning_results.csv")
-    model_save_path = os.path.join(out_folder, "lr_model")
+    out_folder = config.modeling.output_dir
+
+    tune_summary_path = os.path.join(
+        get_original_cwd(), out_folder, "lr_tuning_results.csv"
+    )
+    model_save_path = os.path.join(get_original_cwd(), out_folder, "lr_model")
 
     spark = create_spark_session(config.spark.app_name)
 
