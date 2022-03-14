@@ -14,7 +14,8 @@ splitting:
 modeling:
     output_dir: "modeling/outputs"
 tuning:
+    n_folds: 3
     count_vectorizer:
-        min_df: { "text": [1,2,3] }
+        min_df: { "title": [1], "text":  [1, 2, 3] }
     lr:
         reg_param: [0.01, 0.1, 0, 1]
