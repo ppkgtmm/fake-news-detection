@@ -8,6 +8,11 @@ from hydra.utils import get_original_cwd
 from pyspark.sql.functions import lit
 
 
+def get_feature_name(current_name, prefix):
+    feature_name = current_name.split("_", 1)[-1]
+    return "{}_{}".format(prefix, feature_name)
+
+
 def create_spark_session(app_name):
     return SparkSession.builder.appName(app_name).getOrCreate()
 
@@ -25,7 +30,7 @@ def explode_text(dataset, text_features):
     result_column = []
 
     for text_feature in text_features:
-        new_column = "exploded_{}".format(text_feature)
+        new_column = get_feature_name(text_feature, "exploded")
         acc = acc.withColumn(new_column, split(acc[text_feature], " "))
         result_column.append(new_column)
 
@@ -54,7 +59,7 @@ def get_train_test_set(session, config):
 
     data, text_col_name = explode_text(combined, config.variables.text_vars)
 
-    train_split = float(config.splitting.train_split)
+    train_split = config.splitting.train_split
     train_set, test_set = data.randomSplit(
         [train_split, 1 - train_split], seed=config.splitting.seed
     )
@@ -65,7 +70,7 @@ def get_train_test_set(session, config):
 def get_count_vectorizer(text_features):
     vectorizers = {}
     for text_feature in text_features:
-        output_col = "vectorized_{}".format(text_feature)
+        output_col = get_feature_name(text_feature, "vectorized")
         count_vectorizer = CountVectorizer(inputCol=text_feature, outputCol=output_col)
         vectorizers[output_col] = count_vectorizer
 
