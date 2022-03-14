@@ -1,6 +1,6 @@
 import logging
 import pandas as pd
-from visualization.utils import *
+from visualization.utilities import *
 
 log = logging.getLogger(__name__)
 
