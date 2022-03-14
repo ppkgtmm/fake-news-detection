@@ -1,3 +1,3 @@
 from .training import *
-from .utils import *
+from .utilities import *
 from .tuning import *

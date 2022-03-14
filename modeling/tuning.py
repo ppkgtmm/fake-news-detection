@@ -7,7 +7,7 @@ from pyspark.ml.pipeline import Pipeline
 from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
 from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
-from modeling.utils import (
+from modeling.utilities import (
     create_spark_session,
     get_train_test_set,
     evaluate,

@@ -1,6 +1,6 @@
 import logging
 from pyspark.ml.classification import LogisticRegression, NaiveBayes
-from modeling.utils import (
+from modeling.utilities import (
     create_spark_session,
     get_train_test_set,
     get_pipeline,
