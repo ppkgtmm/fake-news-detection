@@ -29,16 +29,9 @@ def combine_data(data):
     return acc
 
 
-def explode_text(dataset, text_features):
-    acc = dataset
-    result_column = []
-
-    for text_feature in text_features:
-        new_column = get_feature_name(text_feature, "exploded")
-        acc = acc.withColumn(new_column, split(acc[text_feature], " "))
-        result_column.append(new_column)
-
-    return acc, result_column
+def explode_text(dataset, text_feature):
+    new_column = get_feature_name(text_feature, "exploded")
+    return dataset.withColumn(new_column, split(dataset[text_feature], " ")), new_column
 
 
 def read_and_transform_datasets(session, config):
@@ -61,7 +54,7 @@ def get_train_test_set(session, config):
     dfs = read_and_transform_datasets(session, config)
     combined = combine_data(dfs)
 
-    data, text_col_name = explode_text(combined, config.variables.text_vars)
+    data, text_col_name = explode_text(combined, config.variables.text_var)
 
     train_split = config.splitting.train_split
     train_set, test_set = data.randomSplit(
@@ -71,14 +64,9 @@ def get_train_test_set(session, config):
     return train_set, test_set, text_col_name
 
 
-def get_count_vectorizer(text_features):
-    vectorizers = {}
-    for text_feature in text_features:
-        output_col = get_feature_name(text_feature, "vectorized")
-        count_vectorizer = CountVectorizer(inputCol=text_feature, outputCol=output_col)
-        vectorizers[output_col] = count_vectorizer
-
-    return vectorizers
+def get_count_vectorizer(text_feature):
+    output_col = get_feature_name(text_feature, "vectorized")
+    return {output_col: CountVectorizer(inputCol=text_feature, outputCol=output_col)}
 
 
 def get_pipeline(text_col_name, model, features):

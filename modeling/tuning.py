@@ -13,7 +13,6 @@ from modeling.utilities import (
     get_train_test_set,
     evaluate,
     get_count_vectorizer,
-    get_feature_name,
 )
 from hydra.utils import get_original_cwd
 
@@ -34,22 +33,18 @@ def do_tuning(config):
 
     train, test, text_col_name = get_train_test_set(spark, config)
 
-    vectorizers = get_count_vectorizer(text_col_name)
-    assembler = VectorAssembler(inputCols=list(vectorizers.keys()), outputCol=features)
+    vectorizer = get_count_vectorizer(text_col_name)
+    assembler = VectorAssembler(inputCols=list(vectorizer.keys()), outputCol=features)
 
     lr = LogisticRegression(labelCol=target, featuresCol=features, maxIter=10)
-    pipeline = Pipeline(stages=list(vectorizers.values()) + [assembler, lr])
+    pipeline = Pipeline(stages=list(vectorizer.values()) + [assembler, lr])
 
-    param_grid = ParamGridBuilder().addGrid(lr.regParam, config.tuning.lr.reg_param)
-
-    min_dfs = json.loads(config.tuning.count_vectorizer.min_df)
-    for col_name, values in min_dfs.items():
-        vectorizer_col = get_feature_name(col_name, "vectorized")
-        vectorizer = vectorizers.get(vectorizer_col, None)
-        if vectorizer:
-            param_grid.addGrid(vectorizer.minDF, values)
-
-    param_grid = param_grid.build()
+    param_grid = (
+        ParamGridBuilder()
+        .addGrid(lr.regParam, config.tuning.lr.reg_param)
+        .addGrid(vectorizer.minDF, config.tuning.count_vectorizer.min_df)
+        .build()
+    )
 
     cross_val = CrossValidator(
         estimator=pipeline,

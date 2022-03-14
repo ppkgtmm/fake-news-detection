@@ -3,9 +3,9 @@ dataset:
     headers: [True, True]
 variables:
     target_var: "label"
+    text_var: "text"
     feature_var: "features"
     target_vals: [0, 1]
-    text_vars: ["title", "text"]
 spark:
     app_name: "modeling"
 splitting:
@@ -16,6 +16,6 @@ modeling:
 tuning:
     n_folds: 3
     count_vectorizer:
-        min_df: '{ "title": [1], "text":  [1, 2, 3] }'
+        min_df: [1, 2, 3]
     lr:
         reg_param: [0.01, 0.1, 0, 1]
