@@ -9,7 +9,7 @@ log = logging.getLogger(__name__)
 def run_modeling(config):
 
     assert len(config.dataset.input_paths) == len(config.dataset.headers)
-    assert len(config.dataset.headers) == len(config.dataset.target_vals)
+    assert len(config.dataset.headers) == len(config.variables.target_vals)
 
     log.info("Config param validation successful")
 
