@@ -1,9 +1,8 @@
 import os
-import json
 import logging
 import multiprocessing
 import pandas as pd
-from pyspark.ml.feature import VectorAssembler
+from pyspark.ml.feature import CountVectorizer
 from pyspark.ml.pipeline import Pipeline
 from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
@@ -12,7 +11,6 @@ from modeling.utilities import (
     create_spark_session,
     get_train_test_set,
     evaluate,
-    get_count_vectorizer,
 )
 from hydra.utils import get_original_cwd
 
@@ -33,11 +31,10 @@ def do_tuning(config):
 
     train, test, text_col_name = get_train_test_set(spark, config)
 
-    vectorizer = get_count_vectorizer(text_col_name)
-    assembler = VectorAssembler(inputCols=list(vectorizer.keys()), outputCol=features)
+    vectorizer = CountVectorizer(inputCol=text_col_name, outputCol=features)
 
     lr = LogisticRegression(labelCol=target, featuresCol=features, maxIter=10)
-    pipeline = Pipeline(stages=list(vectorizer.values()) + [assembler, lr])
+    pipeline = Pipeline(stages=[vectorizer, lr])
 
     param_grid = (
         ParamGridBuilder()
