@@ -1,5 +1,5 @@
 import pandas as pd
-from preprocessing.utils import clean_text
+from preprocessing.utilities import clean_text
 
 
 def preprocess(in_path, out_path, config):
