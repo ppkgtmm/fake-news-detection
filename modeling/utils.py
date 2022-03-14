@@ -63,23 +63,22 @@ def get_train_test_set(session, config):
 
 
 def get_count_vectorizer(text_features):
-    vectorizers = []
-    result_column = []
-
+    vectorizers = {}
     for text_feature in text_features:
         output_col = "vectorized_{}".format(text_feature)
-        result_column.append(output_col)
         count_vectorizer = CountVectorizer(inputCol=text_feature, outputCol=output_col)
-        vectorizers.append(count_vectorizer)
+        vectorizers[output_col] = count_vectorizer
 
-    return vectorizers, result_column
+    return vectorizers
 
 
 def get_pipeline(text_col_name, model, features):
-    count_vectorizers, vector_names = get_count_vectorizer(text_col_name)
-    assembler = VectorAssembler(inputCols=vector_names, outputCol=features)
+    vectorizer_dict = get_count_vectorizer(text_col_name)
+    assembler = VectorAssembler(
+        inputCols=list(vectorizer_dict.keys()), outputCol=features
+    )
 
-    return Pipeline(stages=count_vectorizers + [assembler, model])
+    return Pipeline(stages=list(vectorizer_dict.values()) + [assembler, model])
 
 
 def evaluate(model, test_set, target):
