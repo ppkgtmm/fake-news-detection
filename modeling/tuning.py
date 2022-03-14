@@ -1,4 +1,5 @@
 import os
+import json
 import logging
 import multiprocessing
 import pandas as pd
@@ -41,7 +42,8 @@ def do_tuning(config):
 
     param_grid = ParamGridBuilder().addGrid(lr.regParam, config.tuning.lr.reg_param)
 
-    for col_name, values in config.tuning.count_vectorizer.min_df.values():
+    min_dfs = json.loads(config.tuning.count_vectorizer.min_df)
+    for col_name, values in min_dfs.items():
         vectorizer_col = get_feature_name(col_name, "vectorized")
         vectorizer = vectorizers.get(vectorizer_col, None)
         if vectorizer:
