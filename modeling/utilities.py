@@ -8,8 +8,8 @@ from hydra.utils import get_original_cwd
 from pyspark.sql.functions import lit
 
 
-def get_feature_name(current_name, prefix):
-    feature_name = current_name.split("_", 1)[-1]
+def get_feature_name(feature_current_name, prefix):
+    feature_name = feature_current_name.split("_", 1)[-1]
     return "{}_{}".format(prefix, feature_name)
 
 
@@ -29,9 +29,12 @@ def combine_data(data):
     return acc
 
 
-def explode_text(dataset, text_feature):
-    new_column = get_feature_name(text_feature, "exploded")
-    return dataset.withColumn(new_column, split(dataset[text_feature], " ")), new_column
+def explode_text(dataset, text_feature_name):
+    new_column = get_feature_name(text_feature_name, "exploded")
+    return (
+        dataset.withColumn(new_column, split(dataset[text_feature_name], " ")),
+        new_column,
+    )
 
 
 def read_and_transform_datasets(session, config):
@@ -64,16 +67,16 @@ def get_train_test_set(session, config):
     return train_set, test_set, text_col_name
 
 
-def get_pipeline(text_col_name, model, features):
-    vectorizer = CountVectorizer(inputCol=text_col_name, outputCol=features)
+def get_pipeline(text_col_name, model, features_name):
+    vectorizer = CountVectorizer(inputCol=text_col_name, outputCol=features_name)
     return Pipeline(stages=[vectorizer, model])
 
 
-def evaluate(model, test_set, target):
+def evaluate(model, test_set, target_name):
     test_pred = model.transform(test_set)
 
     evaluator = BinaryClassificationEvaluator(
-        labelCol=target, rawPredictionCol="prediction", metricName="areaUnderROC"
+        labelCol=target_name, rawPredictionCol="prediction", metricName="areaUnderROC"
     )
 
     return evaluator.evaluate(test_pred)
