@@ -36,3 +36,4 @@ urllib3==1.26.8
 wordcloud==1.8.1
 zipp==3.7.0
 streamlit==1.7.0
+plotly==5.6.0
