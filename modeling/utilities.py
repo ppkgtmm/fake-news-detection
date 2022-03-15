@@ -2,7 +2,7 @@ import os
 from pyspark.sql import SparkSession
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
 from pyspark.ml import Pipeline
-from pyspark.ml.feature import CountVectorizer
+from pyspark.ml.feature import CountVectorizer, IDF
 from pyspark.sql.functions import split
 from hydra.utils import get_original_cwd
 from pyspark.sql.functions import lit
@@ -68,8 +68,12 @@ def get_train_test_set(session, config):
 
 
 def get_pipeline(text_col_name, model, features_name):
-    vectorizer = CountVectorizer(inputCol=text_col_name, outputCol=features_name)
-    return Pipeline(stages=[vectorizer, model])
+    vectorized_col_name = get_feature_name(text_col_name, "vectorized")
+    vectorizer = CountVectorizer(inputCol=text_col_name, outputCol=vectorized_col_name)
+
+    idf = IDF(inputCol=vectorized_col_name, outputCol=features_name)
+
+    return Pipeline(stages=[vectorizer, idf, model])
 
 
 def evaluate(model, test_set, target_name):
