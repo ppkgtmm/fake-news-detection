@@ -13,9 +13,9 @@ def get_feature_name(feature_current_name, prefix):
     return "{}_{}".format(prefix, feature_name)
 
 
-def create_spark_session(app_name):
+def create_spark_session(app_name, driver_memory="8g"):
     return (
-        SparkSession.builder.config("spark.driver.memory", "8g")
+        SparkSession.builder.config("spark.driver.memory", driver_memory)
         .appName(app_name)
         .getOrCreate()
     )
