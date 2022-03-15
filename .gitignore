@@ -6,3 +6,4 @@ venv
 kaggle
 *_prep.csv
 .ipynb_checkpoints
+.DS_Store
