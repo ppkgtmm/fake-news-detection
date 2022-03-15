@@ -1,0 +1,8 @@
+variables:
+    text_var: "text"
+    target_map: ["real", "fake"]
+    target_colors: ["linen", "darkred"]
+spark:
+    app_name: "inference"
+    driver_memory: "4g"
+    model_path: "modeling/outputs/lr_model"
