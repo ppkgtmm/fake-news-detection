@@ -2,7 +2,7 @@ import os
 import logging
 import multiprocessing
 import pandas as pd
-from pyspark.ml.feature import CountVectorizer
+from pyspark.ml.feature import CountVectorizer, IDF
 from pyspark.ml.pipeline import Pipeline
 from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
@@ -11,6 +11,7 @@ from modeling.utilities import (
     create_spark_session,
     get_train_test_set,
     evaluate,
+    get_feature_name,
 )
 from hydra.utils import get_original_cwd
 
@@ -31,15 +32,17 @@ def do_tuning(config):
 
     train, test, text_col_name = get_train_test_set(spark, config)
 
-    vectorizer = CountVectorizer(inputCol=text_col_name, outputCol=features)
-
+    vectorized_col_name = get_feature_name(text_col_name, "vectorized")
+    vectorizer = CountVectorizer(inputCol=text_col_name, outputCol=vectorized_col_name)
+    idf = IDF(inputCol=vectorized_col_name, outputCol=features)
     lr = LogisticRegression(labelCol=target, featuresCol=features, maxIter=10)
-    pipeline = Pipeline(stages=[vectorizer, lr])
+    pipeline = Pipeline(stages=[vectorizer, idf, lr])
 
     param_grid = (
         ParamGridBuilder()
         .addGrid(lr.regParam, config.tuning.lr.reg_param)
         .addGrid(vectorizer.minDF, config.tuning.count_vectorizer.min_df)
+        .addGrid(idf.minDocFreq, config.tuning.idf.min_doc_freq)
         .build()
     )
 
