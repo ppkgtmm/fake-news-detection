@@ -69,6 +69,7 @@ python3 run_tuning.py
 
 ### Serve Model
 - API endpoint /predict receives texts, process them, perform prediction and return the prediction results
+- First request to /predict endpoint might be slow due to spark model set up (deserialization)
 ```sh
 uvicorn app:app --reload
 ```
