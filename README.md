@@ -10,8 +10,21 @@ model training, parameter tuning to model inference
 ## Overview
 <img src="https://user-images.githubusercontent.com/57994731/158847567-2ecf9a20-f8ba-4bbe-a953-941c392288d4.png" />
 
+- In modeling part, for classification 2 algorithms were used namely Logistic Regression i.e. GLM of binomial family and Multinomial Naive Bayes
+- Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/test-test/blob/main/outputs/2022-03-15/12-15-31/run_modeling.log) is below
+
+```txt
+[2022-03-15 12:15:31,997][__main__][INFO] - Config param validation successful
+[2022-03-15 12:15:31,997][__main__][INFO] - Begin modeling process
+[2022-03-15 12:16:41,879][modeling.training][INFO] - Logistic regression test AUC score : 0.9890527497739088
+[2022-03-15 12:17:09,419][modeling.training][INFO] - Multinomial NB test AUC score : 0.9429894896315228
+[2022-03-15 12:17:09,420][__main__][INFO] - End modeling process
+```
+
+- Finally, the Logistic Regression algorithm was selected and used for further tuning
+
 ## Set up
-1. Install [Python 3.6 or above](https://www.python.org/downloads/)
+1. Install [Python 3.8 or above](https://www.python.org/downloads/)
 2. Run below to create a new virtual environment
 ```sh
 python3 -m venv <path-to-virtual-environment>
@@ -54,7 +67,7 @@ python3 run_modeling.py
 python3 run_tuning.py
 ```
 
-### Inference
+### Serve Model
 - API endpoint /predict receives texts, process them, perform prediction and return the prediction results
 ```sh
 uvicorn app:app --reload
