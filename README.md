@@ -77,6 +77,6 @@ uvicorn app:app --reload
 ## Sample work
 - I picked a fake news along with a real news to send them for prediction
 ![image](https://user-images.githubusercontent.com/57994731/158858552-cd4faf9d-9a37-4c37-8b1d-b669250e7ba2.png)
-- Prediction results are below; the first item of probability corresponds to the REAL class while the last item is likeliness of news for being FAKE
+- Prediction results are below; the first item of probability values corresponds to the REAL class while the last item is likeliness of news for being FAKE
 ![image](https://user-images.githubusercontent.com/57994731/158859077-6ab31639-e658-4e9e-9499-a6cc74a32537.png)
 
