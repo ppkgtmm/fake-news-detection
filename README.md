@@ -10,7 +10,7 @@ model training, parameter tuning to model inference
 ## Overview
 <img src="https://user-images.githubusercontent.com/57994731/158847567-2ecf9a20-f8ba-4bbe-a953-941c392288d4.png" />
 
-### Set up
+## Set up
 1. Install [Python 3.6 or above](https://www.python.org/downloads/)
 2. Run below to create a new virtual environment
 ```sh
@@ -40,5 +40,3 @@ python3 run_preprocessing.py
 ```sh
 python3 run_visualization.py
 ```
-
-
