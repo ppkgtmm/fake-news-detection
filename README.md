@@ -9,3 +9,36 @@ model training, parameter tuning to model inference
 
 ## Overview
 <img src="https://user-images.githubusercontent.com/57994731/158847567-2ecf9a20-f8ba-4bbe-a953-941c392288d4.png" />
+
+### Set up
+1. Install [Python 3.6 or above](https://www.python.org/downloads/)
+2. Run below to create a new virtual environment
+```sh
+python3 -m venv <path-to-virtual-environment>
+```
+3. run below to activate the virtual enviroment created
+```sh
+source <path-to-virtual-environment>/bin/activate
+```
+4. run below to install required dependencies
+```sh
+pip3 install -r requirements.txt
+```
+5. you are ready to go !
+
+## Run
+- Each of the steps uses a YAML configuration file stored in config folder of project root directory
+- The steps below assumes that you are in the root directory of project
+### Run preprocessing
+- By default, preprocessed version of dataset is saved to data directory with prep suffix
+```sh
+python3 run_preprocessing.py
+```
+
+### Create Visualizations
+- By default, all visualizations are saved to visualization/outputs directory
+```sh
+python3 run_visualization.py
+```
+
+
