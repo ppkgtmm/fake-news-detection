@@ -8,6 +8,7 @@ variables:
     target_vals: [0, 1]
 spark:
     app_name: "modeling"
+    driver_memory: "8g"
 splitting:
     seed: 42
     train_split: 0.85

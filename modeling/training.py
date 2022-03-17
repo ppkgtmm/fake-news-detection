@@ -14,7 +14,7 @@ def do_modeling(config):
     features = config.variables.feature_var
     target = config.variables.target_var
 
-    spark = create_spark_session(config.spark.app_name)
+    spark = create_spark_session(config.spark.app_name, config.spark.driver_memory)
 
     train, test, text_col_name = get_train_test_set(spark, config)
 
