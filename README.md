@@ -42,7 +42,7 @@ pip3 install -r requirements.txt
 ## Run
 - Each of the steps uses a YAML configuration file stored in config folder of project root directory
 - The steps below assumes that you are in the root directory of project
-### Run Preprocessing
+### Run preprocessing
 - By default, preprocessed version of dataset is saved to data directory with prep suffix
 ```sh
 python3 run_preprocessing.py
@@ -54,12 +54,12 @@ python3 run_preprocessing.py
 python3 run_visualization.py
 ```
 
-### Do Modeling
+### Do modeling
 - Modeling part require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
 ```sh
 python3 run_modeling.py
 ```
-### Tune Parameters
+### Tune parameters
 - By default, best output model is saved to modeling/outputs directory
 - As well, parameter performance is stored to modeling/outputs/lr_tuning_results.csv
 - Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
@@ -67,9 +67,15 @@ python3 run_modeling.py
 python3 run_tuning.py
 ```
 
-### Serve Model
+### Serve model
 - API endpoint /predict receives texts, process them, perform prediction and return the prediction results
 - First request to /predict endpoint might be slow due to spark model set up (deserialization)
 ```sh
 uvicorn app:app --reload
 ```
+
+## Sample work
+- I picked a fake news along with a real news to send them for prediction
+![image](https://user-images.githubusercontent.com/57994731/158858552-cd4faf9d-9a37-4c37-8b1d-b669250e7ba2.png)
+
+
