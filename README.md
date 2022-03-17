@@ -6,3 +6,6 @@ The fake news is a serious concern due to its ability to cause destructive impac
 - Repo for storing source code of fake news detection end-to-end machine learning project which involves process from data cleaning, visualization, 
 model training, parameter tuning to model inference
 - This project is a portfolio project of owner and is not associated with any courses or institutions
+
+## Overview
+<img src="https://user-images.githubusercontent.com/57994731/158847567-2ecf9a20-f8ba-4bbe-a953-941c392288d4.png" />
