@@ -3,7 +3,7 @@
 The fake news is a serious concern due to its ability to cause destructive impacts on society and nation. Figuring out authenticity of news is crucial before making decisions that can affect people around us. Due to technological advancement, people can be made more convinient by having a tool that automates detection of fake news and this sort of automation can be achieved using machine learning and text mining. Therefore, this project has been initiated to use news data for authenticity prediction as either REAL or FAKE
 
 ## General info
-- Repo for storing source code of fake news detection end-to-end machine learning project which involves process from data cleaning, visualization, 
+- Repo for storing source code of fake news detection end-to-end machine learning project which involves process from data cleaning, visualization,
 model training, parameter tuning to model inference
 - This project is a portfolio project of owner and is not associated with any courses or institutions
 
@@ -29,7 +29,7 @@ pip3 install -r requirements.txt
 ## Run
 - Each of the steps uses a YAML configuration file stored in config folder of project root directory
 - The steps below assumes that you are in the root directory of project
-### Run preprocessing
+### Run Preprocessing
 - By default, preprocessed version of dataset is saved to data directory with prep suffix
 ```sh
 python3 run_preprocessing.py
@@ -39,4 +39,23 @@ python3 run_preprocessing.py
 - By default, all visualizations are saved to visualization/outputs directory
 ```sh
 python3 run_visualization.py
+```
+
+### Do Modeling
+- Modeling part require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
+```sh
+python3 run_modeling.py
+```
+### Tune Parameters
+- By default, best output model is saved to modeling/outputs directory
+- As well, parameter performance is stored to modeling/outputs/lr_tuning_results.csv
+- Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
+```sh
+python3 run_tuning.py
+```
+
+### Inference
+- API endpoint /predict receives texts, process them, perform prediction and return the prediction results
+```sh
+uvicorn app:app --reload
 ```
