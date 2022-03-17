@@ -28,7 +28,7 @@ def do_tuning(config):
     )
     model_save_path = os.path.join(get_original_cwd(), out_folder, "lr_model")
 
-    spark = create_spark_session(config.spark.app_name)
+    spark = create_spark_session(config.spark.app_name, config.spark.driver_memory)
 
     train, test, text_col_name = get_train_test_set(spark, config)
 
