@@ -3,5 +3,5 @@ variables:
     target_map: ["real", "fake"]
 spark:
     app_name: "inference"
-    driver_memory: "4g"
+    driver_memory: "860m"
     model_path: "modeling/outputs/lr_model"
