@@ -25,3 +25,7 @@ can be merge to world news
 
 - FAKE news
 <img width=900 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/fake_text_word_cloud.png" />
+
+**Observation**
+- Both real and fake news contain words related to U.S. politics, politicians and government. There are also foreign country names mentioned in both type of news
+- The words said and U.S. are most pervasive in real news. Whereas in fake news, numbers tend to occur together and there are social media related content like pic, twitter, featured
