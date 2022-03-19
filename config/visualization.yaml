@@ -6,7 +6,7 @@ visualizations:
 variables:
     target_var: "label"
     target_vals: ["real", "fake" ]
-    text_vars: ["title", "text"]
+    text_vars: ["text"]
     cat_vars: ["subject"]
 style:
     target_colors: ["steelblue", "tomato"]
