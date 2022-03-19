@@ -45,39 +45,39 @@ pip3 install -r requirements.txt
 - Each of the steps uses a YAML configuration file stored in config folder of project root directory
 - The steps below assumes that you are in the root directory of project
 ### Run preprocessing
-- By default, preprocessed version of dataset is saved to data directory with prep suffix
 ```sh
 python3 run_preprocessing.py
 ```
+- By default, preprocessed version of dataset is saved to data directory with prep suffix
 
-### Create Visualizations
-- By default, all visualizations are saved to visualization/outputs directory
+### Create visualizations
 ```sh
 python3 run_visualization.py
 ```
+- By default, all visualizations are saved to visualization/outputs directory
 
 ### Do modeling
-- Modeling part require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
 ```sh
 python3 run_modeling.py
 ```
+- Modeling part require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
+
 ### Tune parameters
-- By default, best output model is saved to modeling/outputs directory
-- As well, parameter performance is stored to modeling/outputs directory
-- Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
 ```sh
 python3 run_tuning.py
 ```
+- By default, best output model is saved to modeling/outputs directory. As well, parameter performance summary is stored to modeling/outputs directory as a CSV file
+- Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
 
 ### Serve model
-- API endpoint /predict receives texts, process them, perform prediction and return the prediction results
-- First request to /predict endpoint might be slow due to spark model set up (deserialization)
 ```sh
 uvicorn app:app --reload
 ```
+- API endpoint /predict receives texts, process them, perform prediction and return the prediction results
+- First request to /predict endpoint might be slow due to spark model set up (deserialization)
 
 ## Sample work
-- I picked a fake news along with a real news to send for prediction
+- I picked a fake news followed by a real news to send for prediction
 ![image](https://user-images.githubusercontent.com/57994731/159123995-4a1aba6e-85ed-4b8b-aea9-17942d356ce9.png)
 - Prediction results are below; the first item of probability values corresponds to the REAL class while the last item is likeliness of news for being FAKE
 ![image](https://user-images.githubusercontent.com/57994731/159124031-e8868f7d-7404-4a08-8861-0ca763ae9564.png)
