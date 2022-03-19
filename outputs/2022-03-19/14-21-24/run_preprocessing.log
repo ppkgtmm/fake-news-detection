@@ -1,5 +1,0 @@
-[2022-03-19 14:21:24,397][__main__][INFO] - Config param validation successful
-[2022-03-19 14:21:24,397][__main__][INFO] - Begin text data preprocessing
-[2022-03-19 14:32:02,555][preprocessing.main][INFO] - Done preprocessing text variable
-[2022-03-19 14:44:46,760][preprocessing.main][INFO] - Done preprocessing text variable
-[2022-03-19 14:44:48,139][__main__][INFO] - End text data preprocessing
