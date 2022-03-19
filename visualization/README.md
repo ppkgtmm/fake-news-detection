@@ -1,6 +1,6 @@
-# Data visualization
+# Data exploration
 
-### Label distribution
+## Label distribution
 <img width=500 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/label_distribution.jpg" />
 
 **Observation**
