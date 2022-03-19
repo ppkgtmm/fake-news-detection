@@ -30,7 +30,7 @@ def visualize_text(data, config, target_val, out_dir):
             ),
             bins,
         )
-        log.info("Visualization of {} text field successful".format(text_var))
+        log.info("Visualization of {} field successful".format(text_var))
 
 
 def visualize_categories(data, target_val, out_dir, config):
@@ -49,15 +49,15 @@ def visualize(in_path, target_val, out_dir, config):
     target_var = config.variables.target_var
 
     data = pd.read_csv(in_path).fillna("")
-    log.info("Read data from {} successful".format(in_path))
+    log.info("Read data file successful")
 
     data[target_var] = target_val
 
     visualize_text(data, config, target_val, out_dir)
-    log.info("Done text fields visualization of {}".format(in_path))
+    log.info("Done text fields visualization")
 
     visualize_categories(data, target_val, out_dir, config)
-    log.info("Done categorical fields visualization of {}".format(in_path))
+    log.info("Done categorical fields visualization")
 
     return data
 

@@ -31,7 +31,7 @@ def run_visualization(config):
             full_path_to_out_dir,
             config,
         )
-        log.info("Visualization of {} was successful".format(full_in_path))
+        log.info("Visualization of {} was successful".format(in_path))
 
         data_parts.append(data)
 
