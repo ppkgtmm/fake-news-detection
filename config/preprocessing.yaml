@@ -2,4 +2,5 @@ dataset:
     input_paths: ["data/True.csv", "data/Fake.csv"]
     output_paths: ["data/True_prep.csv", "data/Fake_prep.csv"]
 variables:
-    text_vars: ["title", "text"]
+    text_vars: ["text"]
+    drop_vars: ["title", "date"]
