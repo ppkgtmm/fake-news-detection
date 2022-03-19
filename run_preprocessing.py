@@ -26,6 +26,9 @@ def run_preprocessing(config):
         full_out_path = os.path.join(current_path, out_path)
 
         preprocess(full_in_path, full_out_path, config)
+        log.info(
+            "Done preprocessing file {}, output saved to {}".format(in_path, out_path)
+        )
 
     log.info("End text data preprocessing")
 
