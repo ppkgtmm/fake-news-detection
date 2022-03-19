@@ -21,8 +21,12 @@ def plot_label_distribution(data, save_path, config):
     target_var = config.variables.target_var
     label_dist = data[target_var].value_counts(normalize=True).reset_index()
 
-    ax = label_dist.plot.bar(
-        y=target_var, x="index", color=config.style.target_colors, width=0.4
+    plt.figure(figsize=(6, 4))
+    ax = plt.bar(
+        y=label_dist[target_var],
+        x=label_dist["index"],
+        color=config.style.target_colors,
+        width=config.visualizations.bar_width,
     )
     ax.bar_label(ax.containers[0], fmt="%.2f")
     ax.get_legend().remove()

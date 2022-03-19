@@ -3,6 +3,7 @@ dataset:
 visualizations:
     output_dir: "visualization/outputs"
     hist_bins: 30
+    bar_width: 0.4
 variables:
     target_var: "label"
     target_vals: ["real", "fake" ]
