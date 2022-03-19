@@ -10,9 +10,8 @@ model training, parameter tuning to model inference
 ## Overview
 <img src="https://user-images.githubusercontent.com/57994731/158847567-2ecf9a20-f8ba-4bbe-a953-941c392288d4.png" />
 
-- Finding of data visualization step can be found [here](https://github.com/ppkgtmm/fake-news-detection/blob/main/visualization/README.md). Visualizations are related to label (REAL or FAKE) distribution, news subject distribution, common words in news, news word count and news average word length
-- In modeling part, for classification 2 algorithms were used namely Logistic Regression i.e. GLM of binomial family and Multinomial Naive Bayes
-- Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-19/10-19-45/run_modeling.log) is below
+- Findings of data visualization step can be found [here](https://github.com/ppkgtmm/fake-news-detection/blob/main/visualization/README.md)
+- In modeling part, for classification 2 algorithms were used namely Logistic Regression i.e. GLM of binomial family and Multinomial Naive Bayes. Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-19/10-19-45/run_modeling.log) is below
 
 ```txt
 [2022-03-19 10:19:45,941][__main__][INFO] - Config param validation successful
@@ -73,8 +72,14 @@ python3 run_tuning.py
 ```sh
 uvicorn app:app --reload
 ```
-- API endpoint /predict receives texts, process them, perform prediction and return the prediction results
+- By default, API server is running on localhost:8000 and there is endpoint /predict which receives texts, process them, perform prediction and return the results
 - First request to /predict endpoint might be slow due to spark model set up (deserialization)
+
+### Build docker image
+- First, install [docker desktop](https://www.docker.com/products/docker-desktop/)
+```sh
+ docker build --no-cache -t <image-name>:<image-tag> .
+```
 
 ## Sample work
 - I picked a fake news followed by a real news to send for prediction
