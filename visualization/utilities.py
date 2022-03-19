@@ -21,15 +21,14 @@ def plot_label_distribution(data, save_path, config):
     target_var = config.variables.target_var
     label_dist = data[target_var].value_counts(normalize=True).reset_index()
 
-    plt.figure(figsize=(6, 4))
-    ax = plt.bar(
+    fig, ax = plt.subplots(figsize=(6, 4))
+    bars = plt.bar(
         height=label_dist[target_var],
         x=label_dist["index"],
         color=config.style.target_colors,
         width=config.visualizations.bar_width,
     )
-    ax.bar_label(ax.containers[0], fmt="%.2f")
-    ax.get_legend().remove()
+    ax.bar_label(bars, fmt="%.2f")
     plt.xlabel("Label")
     plt.ylabel("Proportion")
     plt.xticks(rotation=0)
