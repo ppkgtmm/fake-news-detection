@@ -1,7 +1,7 @@
 from nltk.tokenize import word_tokenize
 import re
 
-reserved_words = ["EMAIL", "NUMBER", "URL"]
+reserved_words = ["EMAIL", "NUMBER", "URL", "HASHTAG", "MENTION"]
 
 token_dict = {
     "ca": "can",
@@ -41,8 +41,12 @@ word_dict = {
 def substitute(doc: str):
 
     doc = re.sub(r"<br />", " ", doc)
+    doc = re.sub(r"https?:\S+|http?:\S+", " URL ", doc)  # urls can contain @
+    doc = re.sub(
+        r"#\S+", " HASHTAG ", doc
+    )  # hashtags can not contain symbols other than hash
     doc = re.sub(r"\S+@\S+", " EMAIL ", doc)
-    doc = re.sub(r"https?:\S+|http?:\S+", " URL ", doc)
+    doc = re.sub(r"@\S+", " MENTION ", doc)
     doc = re.sub(r"(\d+\-\d+)|\d+", " NUMBER ", doc)
     doc = re.sub(r"[^A-Za-z']", " ", doc)
 
