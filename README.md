@@ -21,7 +21,7 @@ model training, parameter tuning to model inference
 [2022-03-19 10:21:15,301][__main__][INFO] - End modeling process
 ```
 
-- Finally, the Logistic Regression algorithm was selected and used for further tuning
+- Finally based on the AUC metric, the Logistic Regression algorithm was selected and used for further tuning
 
 ## Set up
 1. Install [Python 3.8 or above](https://www.python.org/downloads/)
@@ -77,6 +77,7 @@ uvicorn app:app --reload
 
 ### Build docker image
 - First, install [docker desktop](https://www.docker.com/products/docker-desktop/)
+- In the project directory, run the following
 ```sh
  docker build --no-cache -t <image-name>:<image-tag> .
 ```
