@@ -14,6 +14,29 @@ token_dict = {
     "'re": "are",
 }
 
+word_dict = {
+    "cant": "can not",
+    "couldnt": "could not",
+    "wont": "will not",
+    "pls": "please",
+    "plz": "please",
+    "youre": "you are",
+    "theyre": "they are",
+    "ive": "I have",
+    "havent": "have not",
+    "hasnt": "has not",
+    "hadnt": "had not",
+    "im": "I am",
+    "didnt": "did not",
+    "dont": "do not",
+    "doesnt": "does not",
+    "gotta": "got to",
+    "wanna": "want to",
+    "gonna": "going to",
+    "wannabe": "want to be",
+    "cannot": "can not",
+}
+
 
 def substitute(doc: str):
 
@@ -35,9 +58,13 @@ def expand(word: str):
     if lower.strip() == "let's":
         return "let us"
 
+    if lower.strip() == "'twas":
+        return "it was"
+
     tokens = word_tokenize(lower)
+
     if len(tokens) == 1:
-        return tokens[0]
+        return word_dict.get(tokens[0], tokens[0])
 
     expanded_tokens = tokens
     for i, token in enumerate(tokens):
