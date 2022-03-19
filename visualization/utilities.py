@@ -65,7 +65,6 @@ def plot_category_distribution(category, column_name, save_path):
     ax.bar_label(ax.containers[0], fmt="%.2f")
     plt.xlabel(var_name_cap)
     plt.ylabel("Proportion")
-    plt.title("{} distribution of news".format(var_name_cap))
     plt.xticks(rotation=0)
     plt.savefig(save_path, dpi=200, bbox_inches="tight")
     plt.close()
