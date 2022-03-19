@@ -1,7 +1,7 @@
 # Data visualization
 
 ### Label distribution
-<img width=600 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/label_distribution.jpg" />
+<img width=500 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/label_distribution.jpg" />
 
 **Observation**
 - Proportion of fake news is 52 % which is higher than real news by 4 %
