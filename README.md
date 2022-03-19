@@ -88,4 +88,13 @@ uvicorn app:app --reload
 - Prediction results are below; the first item of probability values corresponds to the REAL class while the last item is likeliness of news for being FAKE
 ![image](https://user-images.githubusercontent.com/57994731/159124031-e8868f7d-7404-4a08-8861-0ca763ae9564.png)
 
-
+## References
+- [fake-and-real-news-dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
+- [introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects](https://towardsdatascience.com/introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects-ed65713a53c6)
+- [concatenate-two-pyspark-dataframes](https://stackoverflow.com/questions/37332434/concatenate-two-pyspark-dataframes)
+- [spark-documentation](https://spark.apache.org/docs/3.1.1/)
+- [pre-commit-git-hook-for-code-formatting](https://pre-commit.com/)
+- [logging-with-hydra](https://hydra.cc/docs/tutorials/basic/running_your_app/logging/)
+- [how-can-i-add-a-blank-directory-to-a-git-repository](https://stackoverflow.com/questions/115983/how-can-i-add-a-blank-directory-to-a-git-repository)
+- [what-are-the-differences-between-gitignore-and-gitkeep](https://stackoverflow.com/questions/7229885/what-are-the-differences-between-gitignore-and-gitkeep)
+- [pyspark-java-lang-outofmemoryerror](https://stackoverflow.com/questions/32336915/pyspark-java-lang-outofmemoryerror-java-heap-space)
