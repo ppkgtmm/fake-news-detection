@@ -10,6 +10,7 @@ model training, parameter tuning to model inference
 ## Overview
 <img src="https://user-images.githubusercontent.com/57994731/158847567-2ecf9a20-f8ba-4bbe-a953-941c392288d4.png" />
 
+- Finding of data visualization step can be found [here](https://github.com/ppkgtmm/fake-news-detection/blob/main/visualization/README.md). Visualizations are related to label (REAL or FAKE) distribution, news subject distribution, common words in news, news word count and news average word length
 - In modeling part, for classification 2 algorithms were used namely Logistic Regression i.e. GLM of binomial family and Multinomial Naive Bayes
 - Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-19/10-19-45/run_modeling.log) is below
 
