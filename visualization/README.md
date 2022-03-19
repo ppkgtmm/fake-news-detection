@@ -16,7 +16,7 @@
 
 **Observation**
 - Real news are well organized into 2 categories namely politics news and world news
-- On the other hand, fakes news subjects are more spread out for exmaple, government can be merged into politics subject, U.S. and Middle-east news 
+- On the other hand, fakes news subjects are more spread out for example, government can be merged into politics subject, U.S. and Middle-east news 
 can be merge to world news
 
 ## Wordcloud
