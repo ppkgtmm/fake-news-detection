@@ -23,7 +23,7 @@ def plot_label_distribution(data, save_path, config):
 
     plt.figure(figsize=(6, 4))
     ax = plt.bar(
-        y=label_dist[target_var],
+        height=label_dist[target_var],
         x=label_dist["index"],
         color=config.style.target_colors,
         width=config.visualizations.bar_width,
