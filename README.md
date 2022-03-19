@@ -25,19 +25,20 @@ model training, parameter tuning to model inference
 
 ## Set up
 1. Install [Python 3.8 or above](https://www.python.org/downloads/)
-2. Run below to create a new virtual environment
+2. Install [Java 8 or above](https://www.oracle.com/java/technologies/downloads/)
+3. In the project directory, run below to create a new virtual environment
 ```sh
 python3 -m venv <path-to-virtual-environment>
 ```
-3. run below to activate the virtual enviroment created
+4. Run below to activate the virtual enviroment created
 ```sh
 source <path-to-virtual-environment>/bin/activate
 ```
-4. run below to install required dependencies
+5. Run below to install required dependencies
 ```sh
 pip3 install -r requirements.txt
 ```
-5. you are ready to go !
+6. You are ready to go !
 
 ## Run
 - Each of the steps uses a YAML configuration file stored in config folder of project root directory
@@ -61,7 +62,7 @@ python3 run_modeling.py
 ```
 ### Tune parameters
 - By default, best output model is saved to modeling/outputs directory
-- As well, parameter performance is stored to modeling/outputs/lr_tuning_results.csv
+- As well, parameter performance is stored to modeling/outputs directory
 - Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
 ```sh
 python3 run_tuning.py
