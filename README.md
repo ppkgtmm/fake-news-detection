@@ -1,6 +1,6 @@
 # Fake news detection
 
-The fake news is a serious concern due to its ability to cause destructive impacts on society and nation. Figuring out authenticity of news is crucial before making decisions that can affect people around us. Due to technological advancement, people can be made more convinient by having a tool that automates detection of fake news and this sort of automation can be achieved using machine learning and text mining. Therefore, this project has been initiated to use news data for authenticity prediction as either REAL or FAKE
+Fake news is a serious concern due to its ability to cause destructive impacts on society and nation. Figuring out authenticity of news is crucial before making decisions that can affect people around us. Due to technological advancement, people can be made more convinient by having a tool that automates detection of fake news and this sort of automation can be achieved using machine learning and text mining. Therefore, this project has been initiated to use news data for authenticity prediction as either REAL or FAKE
 
 ## General info
 - Repo for storing source code of fake news detection end-to-end machine learning project which involves process from data cleaning, visualization,
@@ -11,14 +11,14 @@ model training, parameter tuning to model inference
 <img src="https://user-images.githubusercontent.com/57994731/158847567-2ecf9a20-f8ba-4bbe-a953-941c392288d4.png" />
 
 - In modeling part, for classification 2 algorithms were used namely Logistic Regression i.e. GLM of binomial family and Multinomial Naive Bayes
-- Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/test-test/blob/main/outputs/2022-03-15/12-15-31/run_modeling.log) is below
+- Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-19/10-19-45/run_modeling.log) is below
 
 ```txt
-[2022-03-15 12:15:31,997][__main__][INFO] - Config param validation successful
-[2022-03-15 12:15:31,997][__main__][INFO] - Begin modeling process
-[2022-03-15 12:16:41,879][modeling.training][INFO] - Logistic regression test AUC score : 0.9890527497739088
-[2022-03-15 12:17:09,419][modeling.training][INFO] - Multinomial NB test AUC score : 0.9429894896315228
-[2022-03-15 12:17:09,420][__main__][INFO] - End modeling process
+[2022-03-19 10:19:45,941][__main__][INFO] - Config param validation successful
+[2022-03-19 10:19:45,941][__main__][INFO] - Begin modeling process
+[2022-03-19 10:20:50,652][modeling.training][INFO] - Logistic regression test AUC score : 0.9882990562678062
+[2022-03-19 10:21:15,301][modeling.training][INFO] - Multinomial NB test AUC score : 0.9468460648148149
+[2022-03-19 10:21:15,301][__main__][INFO] - End modeling process
 ```
 
 - Finally, the Logistic Regression algorithm was selected and used for further tuning
