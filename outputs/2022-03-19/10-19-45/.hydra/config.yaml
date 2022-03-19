@@ -1,0 +1,39 @@
+dataset:
+  input_paths:
+  - data/True_prep.csv
+  - data/Fake_prep.csv
+  headers:
+  - true
+  - true
+variables:
+  target_var: label
+  text_var: text
+  feature_var: features
+  target_vals:
+  - 0
+  - 1
+spark:
+  app_name: modeling
+  driver_memory: 8g
+splitting:
+  seed: 42
+  train_split: 0.85
+modeling:
+  output_dir: modeling/outputs
+tuning:
+  n_folds: 3
+  count_vectorizer:
+    min_df:
+    - 1
+    - 2
+    - 3
+  idf:
+    min_doc_freq:
+    - 0
+    - 1
+  lr:
+    reg_param:
+    - 0.01
+    - 0.1
+    - 0
+    - 1
