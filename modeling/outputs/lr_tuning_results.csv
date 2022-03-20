@@ -1,4 +1,4 @@
-areaUnderROC,LogisticRegression_d66ba64a3a43__regParam,CountVectorizer_711353ca3217__minDF,IDF_9de9768090ec__minDocFreq
+areaUnderROC,LogisticRegression_f90d76afce5e__regParam,CountVectorizer_3cf7871b5186__minDF,IDF_21b80bdde526__minDocFreq
 0.9830787846865385,0.01,1.0,0
 0.9830787846865385,0.01,1.0,1
 0.9853671953415226,0.01,2.0,0

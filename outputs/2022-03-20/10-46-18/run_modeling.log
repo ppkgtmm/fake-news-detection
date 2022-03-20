@@ -1,0 +1,5 @@
+[2022-03-20 10:46:18,996][__main__][INFO] - Config param validation successful
+[2022-03-20 10:46:18,996][__main__][INFO] - Begin modeling process
+[2022-03-20 10:47:23,222][modeling.training][INFO] - Logistic regression validation AUC score : 0.9832343375176522
+[2022-03-20 10:47:47,900][modeling.training][INFO] - Multinomial NB validation AUC score : 0.9409717055993653
+[2022-03-20 10:47:47,901][__main__][INFO] - End modeling process
