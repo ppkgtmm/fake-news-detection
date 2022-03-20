@@ -52,7 +52,7 @@ def do_tuning(config):
         evaluator=BinaryClassificationEvaluator(
             labelCol=target, rawPredictionCol="prediction", metricName="areaUnderROC"
         ),
-        numFolds=config.tuning.n_folds,
+        numFolds=config.cv.n_folds,
         seed=config.splitting.seed,
         parallelism=multiprocessing.cpu_count(),
     )
