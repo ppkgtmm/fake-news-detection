@@ -11,14 +11,14 @@ model training, parameter tuning to model inference
 <img src="https://user-images.githubusercontent.com/57994731/158847567-2ecf9a20-f8ba-4bbe-a953-941c392288d4.png" />
 
 - Findings of data visualization step can be found [here](https://github.com/ppkgtmm/fake-news-detection/blob/main/visualization/README.md)
-- In modeling part, for classification 2 algorithms were used namely Logistic Regression i.e. GLM of binomial family and Multinomial Naive Bayes. Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-19/10-19-45/run_modeling.log) is below
+- In modeling part, for classification 2 algorithms were used namely Logistic Regression i.e. GLM of binomial family and Multinomial Naive Bayes. Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-20/10-46-18/run_modeling.log) is below
 
 ```txt
-[2022-03-19 10:19:45,941][__main__][INFO] - Config param validation successful
-[2022-03-19 10:19:45,941][__main__][INFO] - Begin modeling process
-[2022-03-19 10:20:50,652][modeling.training][INFO] - Logistic regression test AUC score : 0.9882990562678062
-[2022-03-19 10:21:15,301][modeling.training][INFO] - Multinomial NB test AUC score : 0.9468460648148149
-[2022-03-19 10:21:15,301][__main__][INFO] - End modeling process
+[2022-03-20 10:46:18,996][__main__][INFO] - Config param validation successful
+[2022-03-20 10:46:18,996][__main__][INFO] - Begin modeling process
+[2022-03-20 10:47:23,222][modeling.training][INFO] - Logistic regression validation AUC score : 0.9832343375176522
+[2022-03-20 10:47:47,900][modeling.training][INFO] - Multinomial NB validation AUC score : 0.9409717055993653
+[2022-03-20 10:47:47,901][__main__][INFO] - End modeling process
 ```
 
 - Finally based on the AUC metric, the Logistic Regression algorithm was selected and used for further tuning
