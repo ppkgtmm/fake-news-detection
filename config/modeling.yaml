@@ -14,8 +14,9 @@ splitting:
     train_split: 0.85
 modeling:
     output_dir: "modeling/outputs"
-tuning:
+cv:
     n_folds: 3
+tuning:
     count_vectorizer:
         min_df: [1, 2, 3]
     idf:
