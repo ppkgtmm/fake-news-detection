@@ -86,7 +86,8 @@ uvicorn app:app --reload
 - I picked a fake news followed by a real news to send for prediction
 ![image](https://user-images.githubusercontent.com/57994731/159123995-4a1aba6e-85ed-4b8b-aea9-17942d356ce9.png)
 - Prediction results are below; the first item of probability values corresponds to the REAL class while the last item is likeliness of news for being FAKE
-![image](https://user-images.githubusercontent.com/57994731/159124031-e8868f7d-7404-4a08-8861-0ca763ae9564.png)
+![image](https://user-images.githubusercontent.com/57994731/159161557-11d163a5-06e8-494b-acf4-fe4b28be4f95.png)
+
 
 ## References
 - [fake-and-real-news-dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
