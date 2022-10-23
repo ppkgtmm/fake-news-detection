@@ -8,7 +8,10 @@ model training, parameter tuning to model inference
 - This project is a portfolio project of owner and is not associated with any courses or institutions
 
 ## Overview
-<img src="https://user-images.githubusercontent.com/57994731/170069125-4da878f0-ba72-4c65-b7c7-2ab0e4fe7ee7.png" alt="fake-news-detection-overview" />
+<p align="center">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/57994731/197405205-67cabf38-fb75-4b59-a15b-db400ff4fc47.png">
+</p>
+
 
 - Findings of data visualization step can be found [here](https://github.com/ppkgtmm/fake-news-detection/blob/main/visualization/README.md)
 - In modeling part, for classification 2 algorithms were used namely Logistic Regression i.e. GLM of binomial family and Multinomial Naive Bayes. Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-20/10-46-18/run_modeling.log) is below
