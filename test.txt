@@ -1,0 +1,9 @@
+So far, United States of America has been considered the country with the lowest number of people who were infected by Covid-19
+
+curl -H 'Content-Type: application/json' \
+--data '{"texts": ["So far, United States of America has been considered the country with the lowest number of people who were infected by Covid-19"]}' \
+http://localhost:8000/predict
+
+curl -H 'Content-Type: application/json' \
+--data '{"texts": ["The Biden administration is considering removing Iran Islamic Revolutionary Guard Corps from its terror blacklist in return for a public commitmment from Iran to de-escalation in the region, three Israeli officials and two U.S. sources tell me. An agreement to restore 2015 nuclear deal is nearly complete, but Iran demand that President Biden reverse Donald Trump decision to designate the IRGC as a Foreign Terrorist Organization is a key remaning sticking point"]}' \
+http://localhost:8000/predict
