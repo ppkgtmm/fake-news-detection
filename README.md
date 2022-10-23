@@ -90,6 +90,9 @@ uvicorn app:app --reload
 ![image](https://user-images.githubusercontent.com/57994731/159123995-4a1aba6e-85ed-4b8b-aea9-17942d356ce9.png)
 - Prediction results are below; the first item of probability values corresponds to the REAL class while the last item is likeliness of news for being FAKE
 ![image](https://user-images.githubusercontent.com/57994731/159161557-11d163a5-06e8-494b-acf4-fe4b28be4f95.png)
+- Front end was added as of 24 Oct 2022
+![image](https://user-images.githubusercontent.com/57994731/197414844-094f4e7d-dae1-4eaf-b8f0-19a9eba91387.png)
+
 
 
 ## References
