@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="mx-auto flex flex-col max-w-screen-lg my-20">
+        <div class="m-10 lg:m-20">
+            <h3 class="mb-8 text-2xl font-medium text-center">Fake news detection with machine learning</h3>
+            <textarea id="news" rows="4" class="p-4 w-full rounded-md bg-gray-50 outline-black font-light"
+                placeholder="Input news to analyze ..."></textarea>
+            <div class="flex flex-row w-full justify-end">
+                <button id="submit-btn"
+                    class="w-full py-2 border bg-gray-600 rounded-md hover:bg-gray-800 text-white mt-6">
+                    Detect
+                </button>
+            </div>
+
+            <h1 class="text-center mt-16 text-2xl font-bold" id="result"></h1>
+
+        </div>
+
+    </div>
+</body>
+<script>
+    const submit = document.querySelector("#submit-btn")
+    submit.addEventListener("click", () => {
+        const result = document.querySelector("#result")
+        result.innerHTML = ""
+        const news = document.querySelector("#news").value
+        fetch("http://localhost:8000/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ texts: [news] })
+        }).then(async (res) => {
+            const json = await res.json()
+            const output = json[0].label.toUpperCase()
+            result.innerHTML = output
+            if (output === "FAKE") {
+                result.classList.add('text-red-500')
+            }
+            else {
+                result.classList.add('text-teal-500')
+            }
+        }).catch(() => null)
+
+    })
+</script>
+
+</html>
