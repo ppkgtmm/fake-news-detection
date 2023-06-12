@@ -91,7 +91,7 @@ uvicorn app:app --reload
 - Prediction results are below; the first item of probability values corresponds to the REAL class while the last item is likeliness of news for being FAKE
 ![image](https://user-images.githubusercontent.com/57994731/159161557-11d163a5-06e8-494b-acf4-fe4b28be4f95.png)
 - Front end was added as of 24 Oct 2022
-![image](https://user-images.githubusercontent.com/57994731/197414844-094f4e7d-dae1-4eaf-b8f0-19a9eba91387.png)
+![image](https://github.com/ppkgtmm/fake-news-detection/assets/57994731/55d3c05c-c02e-4336-8f10-3832575c0219)
 
 
 
