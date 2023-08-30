@@ -1,20 +1,19 @@
-# Fake news detection
+# fake news detection
 
-Fake news is a serious concern due to its ability to cause destructive impacts on society and nation. Figuring out authenticity of news is crucial before making decisions that can affect people around us. Due to technological advancement, people can be made more convinient by having a tool that automates detection of fake news and this sort of automation can be achieved using machine learning and text mining. Therefore, this project has been initiated to use news data for authenticity prediction as either REAL or FAKE
+Repo created to store source code of fake news detection end-to-end machine learning project which involves process from data cleaning, data visualization, model training, parameter tuning to model inference
 
-## General info
-- Repo for storing source code of fake news detection end-to-end machine learning project which involves process from data cleaning, visualization,
-model training, parameter tuning to model inference
-- This project is a portfolio project of owner and is not associated with any courses or institutions
-
-## Overview
 <p align="center">
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/57994731/197405205-67cabf38-fb75-4b59-a15b-db400ff4fc47.png">
 </p>
 
+## Data cleaning
+Primary focus of data cleaning step was to make model better genralize on new data by not only removing special characters and html new line tag but also normalizing high cardinality values such as urls, email addresses, hashtags, social media mentions and numbers. Expansion of modal verbs was also conducted to standardize such words and emphasize negation if was present in sentence
 
-- Findings of data visualization step can be found [here](https://github.com/ppkgtmm/fake-news-detection/blob/main/visualization/README.md)
-- In modeling part, for classification 2 algorithms were used namely Logistic Regression i.e. GLM of binomial family and Multinomial Naive Bayes. Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-20/10-46-18/run_modeling.log) is below
+## Data visualization
+Firstly, distribution of labels were visualized to see if there are any class imbalance. To get information about topics that news inputs are related to, visualization of new subject distribution was done. Afterwards, common words in news inputs, distribution of word count as well as average word length per news were observed through world cloud and histogram visualizations respectively. Findings from data visualization step can be found [here](https://github.com/ppkgtmm/fake-news-detection/blob/main/visualization/README.md)
+
+## Model training
+In modeling part, 2 algorithms were used for classification namely Logistic Regression and Naive Bayes. Both algorithms' predictive power was compared using AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-20/10-46-18/run_modeling.log) is shown below. The reason behind using AUC score as a model performance comparison metric was that the news dataset is not imbalanced and AUC score also helps to ensure model is good at separating between real and fake news
 
 ```txt
 [2022-03-20 10:46:18,996][__main__][INFO] - Config param validation successful
@@ -24,7 +23,12 @@ model training, parameter tuning to model inference
 [2022-03-20 10:47:47,901][__main__][INFO] - End modeling process
 ```
 
+## Parameter tuning
+
+
 - Finally based on the AUC metric, the Logistic Regression algorithm was selected and used for further tuning
+
+## Model inference
 
 ## Set up
 1. Install [Python 3.8 or above](https://www.python.org/downloads/)
