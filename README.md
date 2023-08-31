@@ -33,10 +33,14 @@ Simple front end for interacting with machine learning model was also implemente
 
 ![image](https://github.com/ppkgtmm/fake-news-detection/assets/57994731/b10fa0db-0812-4462-bbd5-fa26c453f036)
 
-## Set up
+## Usage
+
+Make sure to be in the root directory of project in your terminal
+
+#### Set up
 1. Install [Python 3.8 or above](https://www.python.org/downloads/)
 2. Install [Java 8 or above](https://www.oracle.com/java/technologies/downloads/)
-3. In the project directory, run below to create a new virtual environment
+3. Run below to create a new virtual environment
 ```sh
 python3 -m venv <path-to-virtual-environment>
 ```
@@ -49,8 +53,7 @@ source <path-to-virtual-environment>/bin/activate
 pip3 install -r requirements.txt
 ```
 
-## Usage
-Each of the steps uses a YAML configuration file stored in config folder of project root directory. Make sure to be in the root directory of project in your terminal
+Each of the following steps uses a YAML configuration file stored in config folder of project root directory
 
 #### Clean data
 
