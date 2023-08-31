@@ -7,7 +7,7 @@ Repo created to store source code of fake news detection end-to-end machine lear
 </p>
 
 ## Data cleaning
-Primary focus of data cleaning step was to make model better genralize on new data by not only removing special characters and html new line tag but also normalizing high cardinality values such as urls, email addresses, hashtags, social media mentions and numbers. Expansion of modal verbs was also conducted to standardize such words and emphasize negation if was present in sentence
+Primary focus of data cleaning step was to make model better generalize on new data by not only removing special characters and html new line tag but also normalizing high cardinality values such as urls, email addresses, hashtags, social media mentions and numbers. Expansion of modal verbs was also conducted to standardize such words and emphasize negation if any was present in the sentence
 
 ## Data visualization
 Firstly, distribution of labels were visualized to see if there are any class imbalance. To get information about topics that news inputs are related to, visualization of new subject distribution was done. Afterwards, common words in news inputs, distribution of word count as well as average word length per news were observed through world cloud and histogram visualizations respectively. Findings from data visualization step can be found [here](https://github.com/ppkgtmm/fake-news-detection/blob/main/visualization/README.md)
