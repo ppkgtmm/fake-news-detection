@@ -91,8 +91,8 @@ uvicorn app:app --reload
 - First request to /predict endpoint might be slow due to spark model set up (deserialization)
 
 #### Build docker image
-- First, install [docker desktop](https://www.docker.com/products/docker-desktop/)
-- In the project directory, run the following
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+2. Run the following inside project directory 
 ```sh
  docker build --no-cache -t <image-name>:<image-tag> .
 ```
