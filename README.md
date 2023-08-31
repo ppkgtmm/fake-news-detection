@@ -85,7 +85,7 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
 ```sh
 python3 run_tuning.py
 ```
-- By default, best output model is saved to modeling/outputs directory. Parameter performance summary is also stored to modeling/outputs directory as a CSV file
+- By default, best output model is saved to modeling/outputs directory. Hyper parameter performance summary is also stored to modeling/outputs directory as a CSV file
 - Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml file
   
 #### Serve model
