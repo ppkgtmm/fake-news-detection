@@ -93,8 +93,8 @@ python3 run_tuning.py
 ```sh
 uvicorn app:app --reload
 ```
-- By default, API server is running on localhost:8000 and there is endpoint /predict which receives texts, process them, perform prediction and return the results
-- First request to /predict endpoint might be slow due to spark model set up (deserialization)
+- By default, API server is running on localhost:8000 where an endpoint /predict which process texts and perform prediction exists
+- First request to /predict endpoint might be slow due to spark model deserialization
 
 #### Build docker image
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
