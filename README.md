@@ -24,12 +24,12 @@ In modeling part, 2 algorithms were used for classification namely Logistic Regr
 ```
 
 ## Model inference
-One Fake news and a real news were sent for prediction. The prediction results are shown in second screenshot below; the first item of probability values corresponds to the REAL class while the last item is likeliness of news for being FAKE
+A couple of news inputs containing fake news followed by real news were sent for prediction. The prediction results are shown in the second screenshot below; the first item of probability values corresponds to the REAL news class while the other corresponds to the FAKE news class
 
 ![image](https://user-images.githubusercontent.com/57994731/159123995-4a1aba6e-85ed-4b8b-aea9-17942d356ce9.png)
 ![image](https://user-images.githubusercontent.com/57994731/159161557-11d163a5-06e8-494b-acf4-fe4b28be4f95.png)
 
-Front end for interacting with machine learning model is also available
+Simple front end for interacting with machine learning model was also implemented
 
 ![image](https://github.com/ppkgtmm/fake-news-detection/assets/57994731/b10fa0db-0812-4462-bbd5-fa26c453f036)
 
