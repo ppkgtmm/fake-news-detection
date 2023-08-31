@@ -60,7 +60,8 @@ Each of the following steps uses a YAML configuration file stored in config fold
 ```sh
 python3 run_preprocessing.py
 ```
-- By default, preprocessed version of dataset is saved to data directory with prep suffix
+
+By default, processed version of dataset is saved to data directory with prep suffix
 
 
 #### Create visualizations
@@ -68,14 +69,16 @@ python3 run_preprocessing.py
 ```sh
 python3 run_visualization.py
 ```
-- By default, all visualizations are saved to visualization/outputs directory
+
+By default, all visualizations are saved to visualization/outputs directory
 
 #### Train model
 
 ```sh
 python3 run_modeling.py
 ```
-- This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
+
+This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
 
 #### Tune parameters
 
