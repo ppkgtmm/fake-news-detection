@@ -78,15 +78,15 @@ By default, all visualizations are saved to visualization/outputs directory
 python3 run_modeling.py
 ```
 
-This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
+This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml file
 
 #### Tune parameters
 
 ```sh
 python3 run_tuning.py
 ```
-- By default, best output model is saved to modeling/outputs directory. As well, parameter performance summary is stored to modeling/outputs directory as a CSV file
-- Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml
+- By default, best output model is saved to modeling/outputs directory. Parameter performance summary is also stored to modeling/outputs directory as a CSV file
+- Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml file
   
 #### Serve model
 
