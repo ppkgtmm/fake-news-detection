@@ -1,6 +1,6 @@
 # fake news detection
 
-Repo created to store source code of fake news detection end-to-end machine learning project which involves process from data cleaning, data visualization, model training, parameter tuning to model inference
+Repo created to store source code of fake news detection end-to-end machine learning project which involves work from data cleaning, data visualization, model training, parameter tuning to model inference
 
 <p align="center">
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/57994731/197405205-67cabf38-fb75-4b59-a15b-db400ff4fc47.png">
