@@ -51,7 +51,7 @@ chmod +x run.sh
 ./run.sh init
 ```
 
-Each of the following steps uses a YAML configuration file stored in config folder of project root directory
+Each of the following steps uses a YAML configuration file stored in config folder
 
 #### Clean data
 
