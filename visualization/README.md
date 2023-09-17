@@ -39,8 +39,8 @@ can be merge to world news
 
 **Observation**
 - Word count of each news, obtained by counting no. of parts after splitting news by space, was used to plot the above histograms
-- Looking at the overall trend, real news word count distribution plot shape is j-shaped. Moreover, most real news contains not more than a thousand words
-- Fake news word count distribution is right skewed which means there are some fake news that are extremely longer than majority. Apart from that, many fake news in the data collected are longer than real news
+- Looking at the overall trend, both real news and fake news word count distribution plot are right skewed which means there exist some news that are longer than majority
+- Most real news contains not more than a thousand words whereas serveral fake news in the data collected tend to be longer in term of word count
 
 ## News average word length distribution
 - REAL news
