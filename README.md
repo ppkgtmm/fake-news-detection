@@ -98,19 +98,11 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
 2. Open `app/frontend.html` file in browser
 3. Type or paste text in the web page to get prediction from model
 
-#### Build docker image
-1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-2. Run the following inside project directory 
-```sh
- docker build --no-cache -t <image-name>:<image-tag> .
-```
-
 ## References
 - [fake-and-real-news-dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
 - [introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects](https://towardsdatascience.com/introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects-ed65713a53c6)
 - [concatenate-two-pyspark-dataframes](https://stackoverflow.com/questions/37332434/concatenate-two-pyspark-dataframes)
 - [spark-documentation](https://spark.apache.org/docs/3.1.1/)
-- [pre-commit-git-hook-for-code-formatting](https://pre-commit.com/)
 - [logging-with-hydra](https://hydra.cc/docs/tutorials/basic/running_your_app/logging/)
 - [how-can-i-add-a-blank-directory-to-a-git-repository](https://stackoverflow.com/questions/115983/how-can-i-add-a-blank-directory-to-a-git-repository)
 - [what-are-the-differences-between-gitignore-and-gitkeep](https://stackoverflow.com/questions/7229885/what-are-the-differences-between-gitignore-and-gitkeep)
