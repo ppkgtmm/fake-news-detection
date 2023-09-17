@@ -7,7 +7,7 @@ from preprocessing import preprocess
 log = logging.getLogger(__name__)
 
 
-@hydra.main(config_path="config", config_name="preprocessing.yaml")
+@hydra.main(config_path="../config", config_name="preprocessing.yaml")
 def run_preprocessing(config):
 
     assert len(config.dataset.input_paths) == len(config.dataset.output_paths)
