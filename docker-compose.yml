@@ -1,9 +1,0 @@
-version: "3"
-services:
-  prediction_api:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile
-    container_name: prediction_api
-    ports:
-      - "8000:8000"
