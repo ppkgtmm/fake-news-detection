@@ -51,7 +51,7 @@ chmod +x run.sh
 ./run.sh init
 ```
 
-Each of the following steps uses a YAML configuration file stored in config folder
+Each of the following steps uses a YAML configuration file stored in `config` folder
 
 #### Data cleaning
 
@@ -59,32 +59,32 @@ Each of the following steps uses a YAML configuration file stored in config fold
 ./run.sh preprocess
 ```
 
-By default, processed version of dataset is saved to data directory with prep suffix
+By default, processed version of dataset is saved to `data` directory with `prep` suffix
 
 
 #### Create visualizations
 
 ```sh
-python3 run_visualization.py
+./run.sh visualize
 ```
 
-By default, all visualizations are saved to visualization/outputs directory
+By default, all visualizations are saved to `visualization/outputs` directory
 
 #### Train model
 
 ```sh
-python3 run_modeling.py
+./run.sh model
 ```
 
-This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml file
+This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
 
 #### Tune parameters
 
 ```sh
-python3 run_tuning.py
+./run.sh tune
 ```
-- By default, best output model is saved to modeling/outputs directory. Hyper parameter performance summary is also stored to modeling/outputs directory as a CSV file
-- Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml file
+- By default, best output model is saved to `modeling/outputs` directory. Hyper parameter performance summary is also stored to `modeling/outputs` directory as a CSV file
+- Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
   
 #### Serve model
 
