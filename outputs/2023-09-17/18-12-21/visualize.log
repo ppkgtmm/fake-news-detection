@@ -1,0 +1,16 @@
+[2023-09-17 18:12:21,164][__main__][INFO] - Config param validation successful
+[2023-09-17 18:12:21,165][__main__][INFO] - Begin visualization process
+[2023-09-17 18:12:21,620][visualization.main][INFO] - Read data file successful
+[2023-09-17 18:12:52,724][visualization.main][INFO] - Visualization of text field successful
+[2023-09-17 18:12:52,724][visualization.main][INFO] - Done text fields visualization
+[2023-09-17 18:12:52,845][visualization.main][INFO] - Visualization of subject distribution successful
+[2023-09-17 18:12:52,845][visualization.main][INFO] - Done categorical fields visualization
+[2023-09-17 18:12:52,845][__main__][INFO] - Visualization of data/True_prep.csv was successful
+[2023-09-17 18:12:53,319][visualization.main][INFO] - Read data file successful
+[2023-09-17 18:13:27,719][visualization.main][INFO] - Visualization of text field successful
+[2023-09-17 18:13:27,720][visualization.main][INFO] - Done text fields visualization
+[2023-09-17 18:13:27,890][visualization.main][INFO] - Visualization of subject distribution successful
+[2023-09-17 18:13:27,890][visualization.main][INFO] - Done categorical fields visualization
+[2023-09-17 18:13:27,890][__main__][INFO] - Visualization of data/Fake_prep.csv was successful
+[2023-09-17 18:13:28,008][visualization.main][INFO] - Visualization of label distribution successful
+[2023-09-17 18:13:28,009][__main__][INFO] - End visualization process
