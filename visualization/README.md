@@ -35,7 +35,7 @@ can be merge to world news
 <img width=700 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/real_text_word_count_dist.jpg" />
 
 - FAKE news
-<img width=700 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/fake_text_word_count_dist.jpg" />
+<img width=700  src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/fake_text_word_count_dist.jpg" />
 
 **Observation**
 - Word count of each news, obtained by counting no. of parts after splitting news by space, was used to plot the above histograms
@@ -44,10 +44,16 @@ can be merge to world news
 
 ## News average word length distribution
 - REAL news
+  
+<p align="center">
 <img width=700 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/real_text_avg_word_len_dist.jpg" />
+</p>
 
 - FAKE news
+  
+<p align="center">
 <img width=700 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/fake_text_avg_word_len_dist.jpg" />
+</p>
 
 **Observation**
 - Average word length of each news, obtained by counting no. of characters in each word inside the news and averaging the count, was used to plot the above histograms
