@@ -5,7 +5,7 @@ CLEAR="\033[0m"
 
 usage() {
     echo "usage: ./run.sh command"
-    echo "where command is one of init, preprocess, visualize, model, tune, api"
+    echo "where command is one of init, preprocess, visualize, model, tune, api, ui"
 }
 
 prepenv() {
@@ -63,6 +63,9 @@ then
 elif [ "$1" == "api" ]
 then
     api
+elif [ "$1" == "ui" ]
+then
+    open app/frontend.html
 else
     usage
     echo "${RED}error : invalid argument${CLEAR}"
