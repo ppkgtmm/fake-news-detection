@@ -21,7 +21,7 @@ init() {
 
 preprocess() {
     prepenv
-    python3 run_preprocessing.py
+    python3 runners/preprocessing.py
 }
 
 
