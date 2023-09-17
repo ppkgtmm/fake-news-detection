@@ -1,7 +1,10 @@
 # Data visualization
 
 ## Label distribution
+
+<p align="center">
 <img width=500 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/label_distribution.jpg" />
+</p>
 
 **Observation**
 - Proportion of fake news is 52 % which is higher than real news by 4 %
@@ -9,10 +12,16 @@
 
 ## Subject distribution
 - REAL news
+
+<p align="center">
 <img width=700 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/real_subject_distribution.jpg" />
+</p>
 
 - FAKE news
+
+<p align="center">
 <img width=700 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/fake_subject_distribution.jpg" />
+</p>
 
 **Observation**
 - Real news are well organized into 2 categories namely politics news and world news
@@ -21,10 +30,16 @@ can be merge to world news
 
 ## Wordcloud
 - REAL news
+
+<p align="center">
 <img width=900 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/real_text_word_cloud.png" />
+</p>
 
 - FAKE news
+
+<p align="center">
 <img width=900 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/fake_text_word_cloud.png" />
+</p>
 
 **Observation**
 - Both real and fake news contain words related to politics, U.S. politicians, social issues and crime. Also, there are occurrences of country names, numbers, emails, mentions and hashtags in both type of news
@@ -32,10 +47,16 @@ can be merge to world news
 
 ## News word count distribution
 - REAL news
+
+<p align="center">
 <img width=700 src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/real_text_word_count_dist.jpg" />
+</p>
 
 - FAKE news
+
+<p align="center">
 <img width=700  src="https://github.com/ppkgtmm/fake-news-detection/raw/main/visualization/outputs/fake_text_word_count_dist.jpg" />
+</p>
 
 **Observation**
 - Word count of each news, obtained by counting no. of parts after splitting news by space, was used to plot the above histograms
