@@ -5,7 +5,7 @@ CLEAR="\033[0m"
 
 usage() {
     echo "usage: ./run.sh command"
-    echo "where command is one of init, preprocess, visualize, model, tune"
+    echo "where command is one of init, preprocess, visualize, model, tune, api"
 }
 
 prepenv() {
@@ -40,6 +40,11 @@ tune() {
     python3 runners/tune.py
 }
 
+api() {
+    prepenv
+    uvicorn app.api:app --reload
+}
+
 if [ "$1" == "init" ]
 then
     init
@@ -55,6 +60,9 @@ then
 elif [ "$1" == "tune" ]
 then
     tune
+elif [ "$1" == "api" ]
+then
+    api
 else
     usage
     echo "${RED}error : invalid argument${CLEAR}"
