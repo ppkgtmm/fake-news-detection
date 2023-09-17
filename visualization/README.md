@@ -28,7 +28,7 @@ can be merge to world news
 
 **Observation**
 - Both real and fake news contain words related to politics, U.S. politicians, social issues and crime. Also, there are occurrences of country names, numbers, emails, mentions and hashtags in both type of news
-- Unlike the real news, fake news collected contains informal words, urls, social media platform and website names
+- Unlike the real news, fake news collected contains informal words, urls, social media website names
 
 ## News word count distribution
 - REAL news
