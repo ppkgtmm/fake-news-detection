@@ -56,7 +56,7 @@ Each of the following steps uses a YAML configuration file stored in config fold
 #### Data cleaning
 
 ```sh
-python3 run_preprocessing.py
+./run.sh preprocess
 ```
 
 By default, processed version of dataset is saved to data directory with prep suffix
