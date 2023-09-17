@@ -37,20 +37,16 @@ Simple front end for interacting with machine learning model was also implemente
 
 Make sure to be in the root directory of project in your terminal
 
-#### Set up
-1. Install [Python 3.8 or above](https://www.python.org/downloads/)
-2. Install [Java 8 or above](https://www.oracle.com/java/technologies/downloads/)
-3. Run below to create a new virtual environment
+#### Initialization
+1. Install [Python 3.8](https://www.python.org/downloads/)
+2. Install [Java 8](https://www.oracle.com/java/technologies/downloads/)
+3. Run below to grant execute permission to helper script
 ```sh
-python3 -m venv <path-to-virtual-environment>
+chmod +x run.sh
 ```
-4. Run below to activate the virtual enviroment created
+4. Run the following to initialize project
 ```sh
-source <path-to-virtual-environment>/bin/activate
-```
-5. Run below to install required dependencies
-```sh
-pip3 install -r requirements.txt
+./run.sh init
 ```
 
 Each of the following steps uses a YAML configuration file stored in config folder of project root directory
