@@ -53,7 +53,7 @@ chmod +x run.sh
 
 Each of the following steps uses a YAML configuration file stored in config folder
 
-#### Clean data
+#### Data cleaning
 
 ```sh
 python3 run_preprocessing.py
