@@ -5,7 +5,7 @@ CLEAR="\033[0m"
 
 usage() {
     echo "usage: ./run.sh command"
-    echo "where command is one of init, preprocess, visualize"
+    echo "where command is one of init, preprocess, visualize, model, tune"
 }
 
 prepenv() {
@@ -30,6 +30,16 @@ visualize() {
 }
 
 
+model() {
+    prepenv
+    python3 runners/model.py
+}
+
+tune() {
+    prepenv
+    python3 runners/tune.py
+}
+
 if [ "$1" == "init" ]
 then
     init
@@ -39,6 +49,12 @@ then
 elif [ "$1" == "visualize" ]
 then
     visualize
+elif [ "$1" == "model" ]
+then
+    model
+elif [ "$1" == "tune" ]
+then
+    tune
 else
     usage
     echo "${RED}error : invalid argument${CLEAR}"
