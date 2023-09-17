@@ -5,7 +5,7 @@ from modeling import do_tuning
 log = logging.getLogger(__name__)
 
 
-@hydra.main(config_path="config", config_name="modeling.yaml")
+@hydra.main(config_path="../config", config_name="modeling.yaml")
 def run_tuning(config):
 
     assert len(config.dataset.input_paths) == len(config.dataset.headers)

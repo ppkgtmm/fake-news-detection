@@ -7,7 +7,7 @@ from visualization import get_save_path, visualize, visualize_label_distribution
 log = logging.getLogger(__name__)
 
 
-@hydra.main(config_path="config", config_name="visualization.yaml")
+@hydra.main(config_path="../config", config_name="visualization.yaml")
 def run_visualization(config):
 
     assert len(config.dataset.input_paths) == len(config.variables.target_vals)
