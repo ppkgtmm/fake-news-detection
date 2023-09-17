@@ -1,6 +1,6 @@
 import json
 from fastapi import FastAPI
-from schemas import PredictionInput, Predictions
+from app.schemas import PredictionInput, Predictions
 from inference import do_prediction
 from hydra import compose, initialize
 from fastapi.middleware.cors import CORSMiddleware
