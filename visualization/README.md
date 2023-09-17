@@ -51,5 +51,5 @@ can be merge to world news
 
 **Observation**
 - Average word length of each news, obtained by counting no. of characters in each word inside the news and averaging the count, was used to plot the above histograms
-- Interestingly, real news average word length distribution plot looks like a normal i.e. symmetric bell-shaped curve
+- Interestingly, real news average word length distribution plot looks like symmetric bell-shaped curve i.e. normal distribution
 - Fake news average word length distribution is also symmetric but less due to outlier data points(s) on the left hand side of curve. Furthermore, range of average word length in fake news is wider than real news
