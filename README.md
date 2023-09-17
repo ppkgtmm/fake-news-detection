@@ -88,11 +88,15 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
   
 #### Inference
 
+1. Run below to launch model prediction API server
 ```sh
 ./run.sh api
 ```
-- By default, API server is running on localhost:8000 where an endpoint /predict which process texts and perform prediction exists
-- First request to /predict endpoint might be slow due to spark model deserialization
+- By default, API server is running on `http://localhost:8000` where endpoint `/predict` processes texts and performs prediction
+- First request to `/predict` endpoint might be slow due to spark model deserialization
+
+2. Open `app/frontend.html` file in browser
+3. Type or paste text in the web page to get prediction from model
 
 #### Build docker image
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
