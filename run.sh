@@ -28,7 +28,7 @@ preprocess() {
 if [ "$1" == "init" ]
 then
     init
-if [ "$1" == "preprocess" ]
+elif [ "$1" == "preprocess" ]
 then
     preprocess
 else
