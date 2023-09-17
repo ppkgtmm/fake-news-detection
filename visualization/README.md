@@ -1,5 +1,3 @@
-# Data visualization
-
 ## Label distribution
 
 <p align="center">
@@ -28,7 +26,7 @@
 - On the other hand, fakes news subjects are more spread out for example, government can be merged into politics subject, U.S. and Middle-east news 
 can be merge to world news
 
-## Wordcloud
+## Word cloud
 - REAL news
 
 <p align="center">
