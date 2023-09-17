@@ -36,7 +36,7 @@ Simple front end for interacting with machine learning model was also implemente
 
 ## Usage
 
-Make sure to be in the root directory of project in your terminal
+Make sure to be inside project directory in your terminal
 
 #### Initialization
 1. Install [Python 3.8](https://www.python.org/downloads/)
