@@ -41,9 +41,11 @@ Make sure to be in the root directory of project in your terminal
 1. Install [Python 3.8](https://www.python.org/downloads/)
 2. Install [Java 8](https://www.oracle.com/java/technologies/downloads/)
 3. Run below to grant execute permission to helper script
+
 ```sh
 chmod +x run.sh
 ```
+
 4. Run the following to initialize project
 ```sh
 ./run.sh init
