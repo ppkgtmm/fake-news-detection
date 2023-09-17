@@ -13,14 +13,14 @@ Primary focus of data cleaning step was to make model better generalize on new d
 Firstly, distribution of labels were visualized to see if there is any class imbalance. To get information about topics that news inputs are related to, visualization of new subject distribution was done. Afterwards, common words in news inputs, distribution of word count as well as average word length per news were observed through world cloud and histogram visualizations respectively. Findings from data visualization step can be found [here](https://github.com/ppkgtmm/fake-news-detection/blob/main/visualization/README.md)
 
 ## Modeling and tuning
-In modeling part, 2 algorithms were used for classification namely Logistic Regression and Naive Bayes. Both algorithms' predictive power were compared using ROC AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-20/10-46-18/run_modeling.log) is shown below. The reason behind using ROC AUC score as a model performance comparison metric was that the news dataset is not imbalanced and high ROC AUC score also helps to ensure model is good at separating between real and fake news. Finally based on the ROC AUC score, Logistic Regression algorithm was selected and further tuned with grid search approach
+In modeling part, 2 algorithms were used for classification namely Logistic Regression and Naive Bayes. Both algorithms' predictive power were compared using ROC AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2023-09-17/18-37-35/model.log) is shown below. The reason behind using ROC AUC score as a model performance comparison metric was that the news dataset is not imbalanced and high ROC AUC score also helps to ensure model is good at separating between real and fake news. Finally based on the ROC AUC score, Logistic Regression algorithm was selected and further tuned with grid search approach
 
 ```txt
-[2022-03-20 10:46:18,996][__main__][INFO] - Config param validation successful
-[2022-03-20 10:46:18,996][__main__][INFO] - Begin modeling process
-[2022-03-20 10:47:23,222][modeling.training][INFO] - Logistic regression validation AUC score : 0.9832343375176522
-[2022-03-20 10:47:47,900][modeling.training][INFO] - Multinomial NB validation AUC score : 0.9409717055993653
-[2022-03-20 10:47:47,901][__main__][INFO] - End modeling process
+[2023-09-17 18:37:35,613][__main__][INFO] - Config param validation successful
+[2023-09-17 18:37:35,613][__main__][INFO] - Begin modeling process
+[2023-09-17 18:38:19,768][modeling.training][INFO] - Logistic regression validation AUC score : 0.9840257205725704
+[2023-09-17 18:38:34,351][modeling.training][INFO] - Multinomial NB validation AUC score : 0.945421586414332
+[2023-09-17 18:38:34,352][__main__][INFO] - End modeling process
 ```
 
 ## Model inference
