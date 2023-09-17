@@ -3,7 +3,7 @@
 Repo created to store source code of fake news detection end-to-end machine learning project which involves work from data cleaning, data visualization, model training, parameter tuning to model inference
 
 <p align="center">
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/57994731/197405205-67cabf38-fb75-4b59-a15b-db400ff4fc47.png">
+<img width="800" alt="image" src="https://github.com/ppkgtmm/fake-news-detection/blob/main/images/diagram.png?raw=true"> 
 </p>
 
 ## Data cleaning
@@ -26,12 +26,13 @@ In modeling part, 2 algorithms were used for classification namely Logistic Regr
 ## Model inference
 A couple of news inputs containing fake news followed by real news were sent for prediction. The prediction results are shown in the second screenshot below; the first item of probability values corresponds to the REAL news class while the other corresponds to the FAKE news class
 
-![image](https://user-images.githubusercontent.com/57994731/159123995-4a1aba6e-85ed-4b8b-aea9-17942d356ce9.png)
-![image](https://user-images.githubusercontent.com/57994731/159161557-11d163a5-06e8-494b-acf4-fe4b28be4f95.png)
+![image](https://github.com/ppkgtmm/fake-news-detection/blob/main/images/api-input.png?raw=true)
+![image](https://github.com/ppkgtmm/fake-news-detection/blob/main/images/api-output.png?raw=true)
 
 Simple front end for interacting with machine learning model was also implemented
 
-![image](https://github.com/ppkgtmm/fake-news-detection/assets/57994731/b10fa0db-0812-4462-bbd5-fa26c453f036)
+![image](https://github.com/ppkgtmm/fake-news-detection/blob/main/images/ui-real-news.png?raw=true)
+![image](https://github.com/ppkgtmm/fake-news-detection/blob/main/images/ui-fake-news.png?raw=true)
 
 ## Usage
 
