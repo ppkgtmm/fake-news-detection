@@ -13,14 +13,14 @@ Primary focus of data cleaning step was to make model better generalize on new d
 Firstly, distribution of labels were visualized to see if there is any class imbalance. To get information about topics that news inputs are related to, visualization of new subject distribution was done. Afterwards, common words in news inputs, distribution of word count as well as average word length per news were observed through world cloud and histogram visualizations respectively. Findings from data visualization step can be found [here](https://github.com/ppkgtmm/fake-news-detection/blob/main/visualization/README.md)
 
 ## Modeling and tuning
-In modeling part, 2 algorithms were used for classification namely Logistic Regression and Naive Bayes. Both algorithms' predictive power were compared using ROC AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2022-03-20/10-46-18/run_modeling.log) is shown below. The reason behind using ROC AUC score as a model performance comparison metric was that the news dataset is not imbalanced and high ROC AUC score also helps to ensure model is good at separating between real and fake news. Finally based on the ROC AUC score, Logistic Regression algorithm was selected and further tuned with grid search approach
+In modeling part, 2 algorithms were used for classification namely Logistic Regression and Naive Bayes. Both algorithms' predictive power were compared using ROC AUC score and the [result](https://github.com/ppkgtmm/fake-news-detection/blob/main/outputs/2023-09-17/18-37-35/model.log) is shown below. The reason behind using ROC AUC score as a model performance comparison metric was that the news dataset is not imbalanced and high ROC AUC score also helps to ensure model is good at separating between real and fake news. Finally based on the ROC AUC score, Logistic Regression algorithm was selected and further tuned with grid search approach
 
 ```txt
-[2022-03-20 10:46:18,996][__main__][INFO] - Config param validation successful
-[2022-03-20 10:46:18,996][__main__][INFO] - Begin modeling process
-[2022-03-20 10:47:23,222][modeling.training][INFO] - Logistic regression validation AUC score : 0.9832343375176522
-[2022-03-20 10:47:47,900][modeling.training][INFO] - Multinomial NB validation AUC score : 0.9409717055993653
-[2022-03-20 10:47:47,901][__main__][INFO] - End modeling process
+[2023-09-17 18:37:35,613][__main__][INFO] - Config param validation successful
+[2023-09-17 18:37:35,613][__main__][INFO] - Begin modeling process
+[2023-09-17 18:38:19,768][modeling.training][INFO] - Logistic regression validation AUC score : 0.9840257205725704
+[2023-09-17 18:38:34,351][modeling.training][INFO] - Multinomial NB validation AUC score : 0.945421586414332
+[2023-09-17 18:38:34,352][__main__][INFO] - End modeling process
 ```
 
 ## Model inference
@@ -37,78 +37,72 @@ Simple front end for interacting with machine learning model was also implemente
 
 Make sure to be in the root directory of project in your terminal
 
-#### Set up
-1. Install [Python 3.8 or above](https://www.python.org/downloads/)
-2. Install [Java 8 or above](https://www.oracle.com/java/technologies/downloads/)
-3. Run below to create a new virtual environment
-```sh
-python3 -m venv <path-to-virtual-environment>
-```
-4. Run below to activate the virtual enviroment created
-```sh
-source <path-to-virtual-environment>/bin/activate
-```
-5. Run below to install required dependencies
-```sh
-pip3 install -r requirements.txt
-```
-
-Each of the following steps uses a YAML configuration file stored in config folder of project root directory
-
-#### Clean data
+#### Initialization
+1. Install [Python 3.8](https://www.python.org/downloads/)
+2. Install [Java 8](https://www.oracle.com/java/technologies/downloads/)
+3. Run below to grant execute permission to helper script
 
 ```sh
-python3 run_preprocessing.py
+chmod +x run.sh
 ```
 
-By default, processed version of dataset is saved to data directory with prep suffix
+4. Run the following to initialize project
+```sh
+./run.sh init
+```
 
+Each of the following steps uses a YAML configuration file stored in `config` folder
 
-#### Create visualizations
+#### Data cleaning
 
 ```sh
-python3 run_visualization.py
+./run.sh preprocess
 ```
 
-By default, all visualizations are saved to visualization/outputs directory
+By default, processed version of dataset is saved to `data` directory with `prep` suffix
 
-#### Train model
+
+#### Data visualization
 
 ```sh
-python3 run_modeling.py
+./run.sh visualize
 ```
 
-This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml file
+By default, all visualizations are saved to `visualization/outputs` directory
 
-#### Tune parameters
+#### Model training
 
 ```sh
-python3 run_tuning.py
+./run.sh model
 ```
-- By default, best output model is saved to modeling/outputs directory. Hyper parameter performance summary is also stored to modeling/outputs directory as a CSV file
-- Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in config/modeling.yaml file
+
+This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
+
+#### Parameter tuning
+
+```sh
+./run.sh tune
+```
+- By default, best output model is saved to `modeling/outputs` directory. Hyper parameter performance summary is also stored to `modeling/outputs` directory as a CSV file
+- Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
   
-#### Serve model
+#### Inference
 
+1. Run below to launch model prediction API server
 ```sh
-uvicorn app:app --reload
+./run.sh api
 ```
-- By default, API server is running on localhost:8000 where an endpoint /predict which process texts and perform prediction exists
-- First request to /predict endpoint might be slow due to spark model deserialization
+- By default, API server is running on `http://localhost:8000` where endpoint `/predict` processes texts and performs prediction
+- First request to `/predict` endpoint might be slow due to spark model deserialization
 
-#### Build docker image
-1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-2. Run the following inside project directory 
-```sh
- docker build --no-cache -t <image-name>:<image-tag> .
-```
+2. Open `app/frontend.html` file in browser
+3. Type or paste text in the web page to get prediction from model
 
 ## References
 - [fake-and-real-news-dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
 - [introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects](https://towardsdatascience.com/introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects-ed65713a53c6)
 - [concatenate-two-pyspark-dataframes](https://stackoverflow.com/questions/37332434/concatenate-two-pyspark-dataframes)
 - [spark-documentation](https://spark.apache.org/docs/3.1.1/)
-- [pre-commit-git-hook-for-code-formatting](https://pre-commit.com/)
 - [logging-with-hydra](https://hydra.cc/docs/tutorials/basic/running_your_app/logging/)
 - [how-can-i-add-a-blank-directory-to-a-git-repository](https://stackoverflow.com/questions/115983/how-can-i-add-a-blank-directory-to-a-git-repository)
 - [what-are-the-differences-between-gitignore-and-gitkeep](https://stackoverflow.com/questions/7229885/what-are-the-differences-between-gitignore-and-gitkeep)
