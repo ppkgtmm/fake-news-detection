@@ -89,7 +89,7 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
 #### Inference
 
 ```sh
-uvicorn app:app --reload
+./run.sh api
 ```
 - By default, API server is running on localhost:8000 where an endpoint /predict which process texts and perform prediction exists
 - First request to /predict endpoint might be slow due to spark model deserialization
