@@ -62,7 +62,7 @@ Each of the following steps uses a YAML configuration file stored in `config` fo
 By default, processed version of dataset is saved to `data` directory with `prep` suffix
 
 
-#### Create visualizations
+#### Data visualization
 
 ```sh
 ./run.sh visualize
@@ -70,7 +70,7 @@ By default, processed version of dataset is saved to `data` directory with `prep
 
 By default, all visualizations are saved to `visualization/outputs` directory
 
-#### Train model
+#### Model training
 
 ```sh
 ./run.sh model
@@ -78,7 +78,7 @@ By default, all visualizations are saved to `visualization/outputs` directory
 
 This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
 
-#### Tune parameters
+#### Parameter tuning
 
 ```sh
 ./run.sh tune
@@ -86,7 +86,7 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
 - By default, best output model is saved to `modeling/outputs` directory. Hyper parameter performance summary is also stored to `modeling/outputs` directory as a CSV file
 - Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
   
-#### Serve model
+#### Inference
 
 ```sh
 uvicorn app:app --reload
