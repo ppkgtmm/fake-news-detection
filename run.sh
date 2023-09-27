@@ -5,7 +5,7 @@ CLEAR="\033[0m"
 
 usage() {
     echo "usage: ./run.sh command"
-    echo "where command is one of init, preprocess, visualize, model, tune, api, ui"
+    echo "where command is one of init, clean, viz, model, tune, api, ui"
 }
 
 prepenv() {
@@ -48,10 +48,10 @@ api() {
 if [ "$1" == "init" ]
 then
     init
-elif [ "$1" == "preprocess" ]
+elif [ "$1" == "clean" ]
 then
     preprocess
-elif [ "$1" == "visualize" ]
+elif [ "$1" == "viz" ]
 then
     visualize
 elif [ "$1" == "model" ]
