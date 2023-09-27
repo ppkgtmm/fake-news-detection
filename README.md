@@ -57,7 +57,7 @@ Each of the following steps uses a YAML configuration file stored in `config` fo
 #### Data cleaning
 
 ```sh
-./run.sh preprocess
+./run.sh clean
 ```
 
 By default, processed version of dataset is saved to `data` directory with `prep` suffix
@@ -66,7 +66,7 @@ By default, processed version of dataset is saved to `data` directory with `prep
 #### Data visualization
 
 ```sh
-./run.sh visualize
+./run.sh viz
 ```
 
 By default, all visualizations are saved to `visualization/outputs` directory
