@@ -1,6 +1,6 @@
 # fake news detection
 
-Repo created to store source code of fake news detection end-to-end machine learning project which involves work from data cleaning, data visualization, model training, parameter tuning to model inference
+Repository consisting source code of  machine learning project with aim to automate fake news detection using model trained on preprocessed news data
 
 <p align="center">
 <img width="800" alt="image" src="https://github.com/ppkgtmm/fake-news-detection/blob/main/images/diagram.png?raw=true"> 
