@@ -26,6 +26,7 @@ Each of the following steps uses a YAML configuration file stored in `config` fo
 
 By default, processed version of dataset is saved to `data` directory with `prep` suffix
 
+<br/>
 
 **Data Visualization**
 
@@ -35,6 +36,8 @@ By default, processed version of dataset is saved to `data` directory with `prep
 
 By default, all visualizations are saved to `visualization/outputs` directory
 
+<br/>
+
 **Model Training**
 
 ```sh
@@ -43,6 +46,8 @@ By default, all visualizations are saved to `visualization/outputs` directory
 
 This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
 
+<br/>
+
 **Parameter Tuning**
 
 ```sh
@@ -50,7 +55,9 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
 ```
 - By default, best output model is saved to `modeling/outputs` directory. Hyper parameter performance summary is also stored to `modeling/outputs` directory as a CSV file
 - Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
-  
+
+<br/>
+
 **Inference**
 
 1. Run below to launch model prediction API server
@@ -63,8 +70,12 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
 2. Open `app/frontend.html` file in browser
 3. Type or paste text in the web page to get prediction from model
 
+<br/>
+
 **Final Output**
 ![image](https://github.com/ppkgtmm/fake-news-detection/blob/main/images/ui-fake-news.png?raw=true)
+
+<br/>
 
 **References**
 - [fake-and-real-news-dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
