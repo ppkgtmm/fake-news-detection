@@ -16,6 +16,8 @@ chmod +x run.sh
 ./run.sh init
 ```
 
+<br/>
+
 Each of the following steps uses a YAML configuration file stored in `config` folder
 
 **Data Cleaning**
