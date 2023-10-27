@@ -74,11 +74,6 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
 
 <br/>
 
-**Final Output**
-![image](https://github.com/ppkgtmm/fake-news-detection/assets/57994731/35deb2da-94b5-44cc-b3f3-ead19730119b)
-
-<br/>
-
 **References**
 - [fake-and-real-news-dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
 - [introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects](https://towardsdatascience.com/introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects-ed65713a53c6)
