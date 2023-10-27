@@ -75,7 +75,7 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
 <br/>
 
 **Final Output**
-![image](https://github.com/ppkgtmm/fake-news-detection/blob/main/images/ui-fake-news.png?raw=true)
+![image](https://github.com/ppkgtmm/fake-news-detection/assets/57994731/35deb2da-94b5-44cc-b3f3-ead19730119b)
 
 <br/>
 
