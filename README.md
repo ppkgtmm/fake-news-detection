@@ -2,7 +2,7 @@
 
 Make sure to be inside project directory in your terminal
 
-**Initialization**
+### Initialization
 1. Install [Python 3.8](https://www.python.org/downloads/)
 2. Install [Java 8](https://www.oracle.com/java/technologies/downloads/)
 3. Run below to grant execute permission to helper script
@@ -16,11 +16,11 @@ chmod +x run.sh
 ./run.sh init
 ```
 
-<br/>
+
 
 Each of the following steps uses a YAML configuration file stored in `config` folder
 
-**Data Cleaning**
+### Data Cleaning
 
 ```sh
 ./run.sh clean
@@ -28,9 +28,9 @@ Each of the following steps uses a YAML configuration file stored in `config` fo
 
 By default, processed version of dataset is saved to `data` directory with `prep` suffix
 
-<br/>
 
-**Data Visualization**
+
+### Data Visualization
 
 ```sh
 ./run.sh viz
@@ -38,9 +38,9 @@ By default, processed version of dataset is saved to `data` directory with `prep
 
 By default, all visualizations are saved to `visualization/outputs` directory
 
-<br/>
 
-**Model Training**
+
+### Model Training
 
 ```sh
 ./run.sh model
@@ -48,9 +48,9 @@ By default, all visualizations are saved to `visualization/outputs` directory
 
 This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
 
-<br/>
 
-**Parameter Tuning**
+
+### Parameter Tuning
 
 ```sh
 ./run.sh tune
@@ -58,9 +58,9 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
 - By default, best output model is saved to `modeling/outputs` directory. Hyper parameter performance summary is also stored to `modeling/outputs` directory as a CSV file
 - Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
 
-<br/>
 
-**Inference**
+
+### Inference
 
 1. Run below to launch model prediction API server
 ```sh
@@ -72,9 +72,9 @@ This part requires 8 GB of RAM by default but the limit is configurable by editi
 2. Open `app/frontend.html` file in browser
 3. Type or paste text in the web page to get prediction from model
 
-<br/>
 
-**References**
+
+### References
 - [fake-and-real-news-dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
 - [introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects](https://towardsdatascience.com/introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects-ed65713a53c6)
 - [concatenate-two-pyspark-dataframes](https://stackoverflow.com/questions/37332434/concatenate-two-pyspark-dataframes)
