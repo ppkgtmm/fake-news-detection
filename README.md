@@ -2,79 +2,74 @@
 
 Make sure to be inside project directory in your terminal
 
-### Initialization
-1. Install [Python 3.8](https://www.python.org/downloads/)
-2. Install [Java 8](https://www.oracle.com/java/technologies/downloads/)
-3. Run below to grant execute permission to helper script
+## initialization
+
+1. install [python 3.8](https://www.python.org/downloads/)
+2. install [java 8](https://www.oracle.com/java/technologies/downloads/)
+3. run below to grant helper script execution
 
 ```sh
 chmod +x run.sh
 ```
 
-4. Run the following to initialize project
+4. run the following to initialize project
 ```sh
 ./run.sh init
 ```
 
+each of the following steps uses a YAML configuration file stored in `config` folder
 
+## data cleaning
 
-Each of the following steps uses a YAML configuration file stored in `config` folder
-
-### Data Cleaning
+processed version of dataset is saved to `data` directory with `prep` suffix by default
 
 ```sh
 ./run.sh clean
 ```
 
-By default, processed version of dataset is saved to `data` directory with `prep` suffix
 
+## data visualization
 
-
-### Data Visualization
+all visualizations are saved to `visualization/outputs` directory by default
 
 ```sh
 ./run.sh viz
 ```
 
-By default, all visualizations are saved to `visualization/outputs` directory
+## model training
 
-
-
-### Model Training
+requires 8 GB of RAM by default which is configurable at driver_memory in `config/modeling.yaml` file
 
 ```sh
 ./run.sh model
 ```
 
-This part requires 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
 
+## parameter tuning
 
-
-### Parameter Tuning
+- best output model is saved to `modeling/outputs` directory by default
+- hyper parameter performance summary is also stored to `modeling/outputs` directory as a CSV file
+- tuning part requires 8 GB of RAM which is configurable at driver_memory in `config/modeling.yaml` file
 
 ```sh
 ./run.sh tune
 ```
-- By default, best output model is saved to `modeling/outputs` directory. Hyper parameter performance summary is also stored to `modeling/outputs` directory as a CSV file
-- Tuning part also require 8 GB of RAM by default but the limit is configurable by editing driver_memory in `config/modeling.yaml` file
 
+## inference
 
+1. run below to launch model prediction api server
 
-### Inference
-
-1. Run below to launch model prediction API server
 ```sh
 ./run.sh api
 ```
-- By default, API server is running on `http://localhost:8000` where endpoint `/predict` processes texts and performs prediction
-- First request to `/predict` endpoint might be slow due to spark model deserialization
+- api server will be running on http://localhost:8000
+- `/predict` endpoint processes texts and performs prediction
+- first request to `/predict` might be slow due to spark model deserialization
 
-2. Open `app/frontend.html` file in browser
-3. Type or paste text in the web page to get prediction from model
+2. open `app/frontend.html` file in browser
+3. type or paste text in the web page to get model prediction 
 
-
-
-### References
+## References
 - [fake-and-real-news-dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
 - [introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects](https://towardsdatascience.com/introduction-to-hydra-cc-a-powerful-framework-to-configure-your-data-science-projects-ed65713a53c6)
 - [concatenate-two-pyspark-dataframes](https://stackoverflow.com/questions/37332434/concatenate-two-pyspark-dataframes)
