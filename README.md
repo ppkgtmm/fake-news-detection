@@ -1,6 +1,6 @@
 # 📰 fake news detection
 
-automate fake news detection with machine learning model
+automate news authenticity prediction with machine learning model
 
 ## initialization
 
