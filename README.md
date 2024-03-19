@@ -1,6 +1,6 @@
-# fake news detection
+# 📰 fake news detection
 
-Make sure to be inside project directory in your terminal
+automate fake news detection with machine learning model
 
 ## initialization
 
