@@ -38,7 +38,7 @@ all visualizations are saved to `visualization/outputs` directory by default
 
 ## model training
 
-requires 8 GB of RAM by default which is configurable at driver_memory in `config/modeling.yaml` file
+requires 8 GB of memory by default which is configurable at driver_memory in `config/modeling.yaml` file
 
 ```sh
 ./run.sh model
@@ -49,7 +49,7 @@ requires 8 GB of RAM by default which is configurable at driver_memory in `confi
 
 - best output model is saved to `modeling/outputs` directory by default
 - hyper parameter performance summary is also stored to `modeling/outputs` directory as a CSV file
-- tuning part requires 8 GB of RAM which is configurable at driver_memory in `config/modeling.yaml` file
+- tuning part requires 8 GB of memory which is configurable at driver_memory in `config/modeling.yaml` file
 
 ```sh
 ./run.sh tune
@@ -67,6 +67,7 @@ requires 8 GB of RAM by default which is configurable at driver_memory in `confi
 - first request to `/predict` might be slow due to spark model deserialization
 
 2. open `app/frontend.html` file in browser
+
 3. type or paste text in the web page to get model prediction 
 
 ## References
